@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "montserrat";
+    list-style: none;
+  }
+
+  body {
+    margin: auto;
+    max-width: 1250px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 50px;
+  }
+
+  nav > div.nav {
+    display: flex;
+    gap: 40px;
+  }
+
+  menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .iconeMenu {
+    background-color: #000000;
+    width: 50px;
+    height: 40px;
+  }
+
+  .MenuDePesquisa > input {
+    border: none;
+    width: 40vw;
+    height: 40px;
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid #cccccc;
+    outline: none;
+}
+
+#ButtonPesquisa {
+    position: absolute;
+    transform: translate(-40px);
+    
+    border-radius: 0px 20px 20px 0px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #cccccc;
+  }
+
+  .nav-b {
+    display: flex;
+    gap: 40px;
+    justify-content: space-around;
+    height: 35px;
+    align-items: center;
+    padding: 0 40px;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  .carousel {
+    margin: auto;
+    margin-top: 10px;
+    position: relative;
+    width: 900%;
+    max-width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 1s ease;
+    cursor: grab;
+  }
+
+  .carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    user-select: none;
+  }
+
+  .carousel-slide img {
+    min-width: 100%;
+    display: block;
+    border-radius: 12px;
+  }
+
+  .nav-button {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    background: #7a7a7a10;
+    border: none;
+    color: rgb(177, 177, 177);
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: .5s;
+  }
+
+  .nav-button:hover {
+    background: #7a7a7a40;
+  }
+
+  .prev {
+    left: 10px;
+    transform: translate(-50%, -50%);
+    padding-left: 150px;
+  }
+
+  .next {
+    right: 10px;
+    transform: translate(50%, -50%);
+    padding-right: 150px;
+  }
+
+  .radio-nav {
+    width: 100%;
+    transform: translateY(-40px);
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 2%;
+  }
+
+  .radio-nav input[type="radio"] {
+    appearance: none;
+    width: 7px;
+    height: 7px;
+    background: #cccccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .5s;
+  }
+
+  .radio-nav input[type="radio"]:checked {
+    background: #ffffff;
+    transform: scale(1.5);
+  }
+
+  .NavLinhasDeProdutos {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .LinhasDeProdutos {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .carrossel-container {
+    position: relative;
+    width: 1250px;
+    overflow: hidden;
+  }
+
+  .carrossel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .item {
+    min-width: 200px;
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+  }
+  
+  .botoes {
+    position: absolute;
+    top: 585px;
+    left: 130px;
+    width: 1340px;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+
+  .botoes button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: #dddddd80;
+    color: #989898;
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 50%;
+    transition: .5s;
+  }
+
+  .botoes button:hover {
+    background: #a4a4a4b3;
+    color: white;
+  }
+
+  .MaisVendidos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .MaisVendidos > h2 {
+    text-align: center;
+    margin: 40px;
+    font-weight: 500;
+  }
+
+  .MaisVendidos > .img1 {
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+  }
