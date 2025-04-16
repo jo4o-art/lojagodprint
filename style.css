@@ -227,8 +227,31 @@
     font-weight: 500;
   }
 
-  .MaisVendidos > .img1 {
+  .ConteinerMaisVendidos {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #920202;
+    gap: 15px;
     width: 100%;
-    height: 160px;
-    border-radius: 10px;
+    margin-bottom: 50px;
+    padding: 10px;
+  }
+
+  .imgMaisVendidos {
+    /* width: 100%; */
+    height: 300px;
+    flex-grow: 1;
+    flex-basis: 200px;
+    background-color: #023992;
+    border-radius: 15px;
+  }
+
+  .ConteinerMaisVendidos .img1 {
+    min-width: 450px;
+    background-color: #029218;
+  }
+
+  .ConteinerMaisVendidos .img2, .img3 {
+    min-width: 35%;
+    background-color: #920292;
   }
