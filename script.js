@@ -113,5 +113,3 @@
       const largura = 200; // mesma largura da div .item
       carrossel.style.transform = `translateX(-${index * largura}px)`;
     }
-
-

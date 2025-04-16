@@ -230,10 +230,8 @@
   .ConteinerMaisVendidos {
     display: flex;
     flex-wrap: wrap;
-    background-color: #920202;
     gap: 15px;
     width: 100%;
-    margin-bottom: 50px;
     padding: 10px;
   }
 
@@ -254,4 +252,49 @@
   .ConteinerMaisVendidos .img2, .img3 {
     min-width: 35%;
     background-color: #920292;
+  }
+
+  .LinhaTextil > h2 {
+    text-align: center;
+    margin: 40px;
+    font-weight: 500;
+  }
+
+  .ConteinerProdutos {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+
+  .Produto {
+    background-color: #029218;
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .Produto > img {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+  }
+
+  .Produto > .InfoProdutos {
+    padding: 10px;
+  }
+
+  .LinhaDeProducao {
+    background-color: #989898;
+    padding: 1px 10px;
+    border-radius: 10px;
+    font-size: 10px;
+  }
+
+  .InfoProdutos h3 {
+    margin: 10px 0;
+    font-weight: 400;
+  }
+
+  .InfoProdutos p {
+    font-size: 13px;
   }
