@@ -163,7 +163,7 @@ div.mobileMenu:hover {
   }
 
   .nav-button {
-    width: 300px;
+    width: 20%;
     height: 300px;
     position: absolute;
     top: 50%;
@@ -171,9 +171,8 @@ div.mobileMenu:hover {
     border: none;
     color: rgb(177, 177, 177);
     font-size: 2rem;
-    padding: 0.5rem 1rem;
+    padding: 50px 10px;
     cursor: pointer;
-    z-index: 10;
     border-radius: 50%;
     transition: .5s;
   }
@@ -181,18 +180,20 @@ div.mobileMenu:hover {
   .nav-button:hover {
     backdrop-filter: blur(10px);
     background-color: #00000015;
+    color: #000000;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.185);
   }
 
   .prev {
     left: 10px;
     transform: translate(-50%, -50%);
-    padding-left: 150px;
+    padding-right: 0;
   }
 
   .next {
     right: 10px;
     transform: translate(50%, -50%);
-    padding-right: 150px;
+    padding-left: 0;
   }
 
   .radio-nav {
@@ -336,19 +337,19 @@ div.mobileMenu:hover {
     background-color: #920292;
   }
   
-  .LinhaTextil > h2 {
+  div > h2 {
     text-align: center;
     margin: 40px;
     font-weight: 500;
   }
 
-  .ConteinerTextil {
+  .Conteiner {
     display: flex;
     align-items: center;
   }
 
   .ConteinerProdutos {
-    max-width: 1100px;
+    max-width: 1200px;
     overflow: hidden;
   }
   
@@ -356,7 +357,7 @@ div.mobileMenu:hover {
     display: flex;
     gap: 10px;
     margin-bottom: 50px;
-    height: 500px;
+    height: 470px;
     padding: 10px;
     transition: transform 0.5s ease-in-out;
   }
@@ -372,15 +373,15 @@ div.mobileMenu:hover {
     transition: .35s;
   }
 
-  .buttonTextil {
+  .buttonProduto {
     margin: 10px;
     display: flex;
     font-family: 'montserrat';
     font-weight: 500;
-    background-color: #989898;
-    color: white;
-    min-width: 40px;
-    height: 40px;
+    background-color: #cacaca73;
+    color: #989898;
+    min-width: 30px;
+    height: 30px;
     border-radius: 50%;
     font-size: 20px;
     text-align: center;
@@ -388,10 +389,12 @@ div.mobileMenu:hover {
     border: none;
     padding: 10px;
     transition: .2s;
+    cursor: pointer;
   }
 
-  .buttonTextil:hover {
-    background-color: #5e5e5e;
+  .buttonProduto:hover {
+    color: white;
+    background-color: #bfbfbf;
     scale: 1.1;
   }
   
@@ -416,6 +419,16 @@ div.mobileMenu:hover {
     font-size: 10px;
   }
 
+  .valor {
+    display: flex;
+    align-items: end;
+    margin: 10px;
+  }
+
+  .valor p {
+    font-size: 10px;
+  }
+
   .InfoProdutos h3 {
     margin: 10px 0;
     font-weight: 400;
@@ -426,3 +439,17 @@ div.mobileMenu:hover {
     color: #5e5e5e;
   }
 
+.imgProduto {
+  background-color: #023992;
+  width: 97%;
+  margin: auto;
+  height: 200px;
+  margin-bottom: 50px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.imgProduto:hover {
+  scale: 1.01;
+}

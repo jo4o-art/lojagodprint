@@ -136,9 +136,9 @@ btnMobile.addEventListener('click', toggleMenu);
       carrossel.style.transform = `translateX(-${index * largura}px)`;
     }
 
-    const slider = document.getElementById('slider');
+        const sliderTextil = document.getElementById('sliderTextil');
         const slideWidth = 250;
-        let currentIndext = 0;
+        let currentTIndext = 0;
 
         if (LarguraDaTela > 1150) {
           NProdutos = 4
@@ -150,9 +150,65 @@ btnMobile.addEventListener('click', toggleMenu);
           NProdutos = 1
         }
 
-        function moveSlide(direction) {
-          const totalSlides = slider.children.length;
-          currentIndext += direction;
-          currentIndext = Math.max(0, Math.min(currentIndext, totalSlides - NProdutos));
-          slider.style.transform = `translateX(-${currentIndext * slideWidth}px)`;
+        function moveSlideTexil(direction) {
+          const totalSlides = sliderTextil.children.length;
+          currentTIndext += direction;
+          currentTIndext = Math.max(0, Math.min(currentTIndext, totalSlides - NProdutos));
+          sliderTextil.style.transform = `translateX(-${currentTIndext * slideWidth}px)`;
         }
+
+        const sliderPersonalizados = document.getElementById('sliderPersonalizados');
+    
+        let currentPIndext = 0;
+
+        function moveSlidePersonalizados(direction) {
+          const totalSlides = sliderPersonalizados.children.length;
+          currentPIndext += direction;
+          currentPIndext = Math.max(0, Math.min(currentPIndext, totalSlides - NProdutos));
+          sliderPersonalizados.style.transform = `translateX(-${currentPIndext * slideWidth}px)`;
+        }
+
+        const sliderCartoes = document.getElementById('sliderCartoes');
+    
+        let currentCIndext = 0;
+
+        function moveSlideCartoes(direction) {
+          const totalSlides = sliderCartoes.children.length;
+          currentCIndext += direction;
+          currentCIndext = Math.max(0, Math.min(currentCIndext, totalSlides - NProdutos));
+          sliderCartoes.style.transform = `translateX(-${currentCIndext * slideWidth}px)`;
+        }
+
+        const sliderBanner = document.getElementById('sliderBanner');
+    
+        let currentBIndext = 0;
+
+        function moveSlideBanner(direction) {
+          const totalSlides = sliderBanner.children.length;
+          currentBIndext += direction;
+          currentBIndext = Math.max(0, Math.min(currentBIndext, totalSlides - NProdutos));
+          sliderBanner.style.transform = `translateX(-${currentBIndext * slideWidth}px)`;
+        }
+
+        const sliderPainel = document.getElementById('sliderPainel');
+    
+        let currentPaIndext = 0;
+
+        function moveSlidePainel(direction) {
+          const totalSlides = sliderPainel.children.length;
+          currentPaIndext += direction;
+          currentPaIndext = Math.max(0, Math.min(currentPaIndext, totalSlides - NProdutos));
+          sliderPainel.style.transform = `translateX(-${currentPaIndext * slideWidth}px)`;
+        }
+
+        const sliderWindBanner = document.getElementById('sliderWindBanner');
+    
+        let currentWBIndext = 0;
+
+        function moveSlideWindBanner(direction) {
+          const totalSlides = sliderPainel.children.length;
+          currentWBIndext += direction;
+          currentWBIndext = Math.max(0, Math.min(currentWBIndext, totalSlides - NProdutos));
+          sliderWindBanner.style.transform = `translateX(-${currentWBIndext * slideWidth}px)`;
+        }
+

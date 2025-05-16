@@ -48,4 +48,12 @@
     .icone-menu {
         min-width: 50px;
     }
+    
+    .prev {
+        padding-left: 110px;
+    }
+
+    .next {
+        padding-right: 110px;
+    }
 }
