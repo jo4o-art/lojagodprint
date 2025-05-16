@@ -1,3 +1,12 @@
+    const btnMobile = document.getElementById('btn-mobile');
+
+function toggleMenu() {
+    const nav = document.getElementById('nav-b');
+    nav.classList.toggle('active');
+}
+
+btnMobile.addEventListener('click', toggleMenu);
+    
     const track = document.getElementById("track");
     const slides = Array.from(track.children);
     const prevBtn = document.getElementById("prev");
@@ -95,6 +104,19 @@
     const carrossel = document.getElementById('carrossel');
     const anterior = document.getElementById('anterior');
     const proximo = document.getElementById('proximo');
+    const LarguraDaTela = window.outerWidth
+
+    if (LarguraDaTela > 1500) {
+      NCategorias = 6
+    } if (LarguraDaTela < 1500) {
+      NCategorias = 5
+    } if (LarguraDaTela < 1000 ) {
+      NCategorias = 4
+    } if (LarguraDaTela < 800) {
+      NCategorias = 3
+    } if (LarguraDaTela < 650) {
+      NCategorias = 2
+    }
 
     let index = 0;
 
@@ -104,7 +126,7 @@
     });
 
     proximo.addEventListener('click', () => {
-      const total = carrossel.children.length - 6;
+      const total = carrossel.children.length - NCategorias;
       index = (index < total) ? index + 1 : total;
       atualizarCarrossel();
     });
@@ -113,3 +135,24 @@
       const largura = 200; // mesma largura da div .item
       carrossel.style.transform = `translateX(-${index * largura}px)`;
     }
+
+    const slider = document.getElementById('slider');
+        const slideWidth = 250;
+        let currentIndext = 0;
+
+        if (LarguraDaTela > 1150) {
+          NProdutos = 4
+        } if (LarguraDaTela < 1150) {
+          NProdutos = 3
+        } if (LarguraDaTela < 800) {
+          NProdutos = 2
+        } if (LarguraDaTela < 650) {
+          NProdutos = 1
+        }
+
+        function moveSlide(direction) {
+          const totalSlides = slider.children.length;
+          currentIndext += direction;
+          currentIndext = Math.max(0, Math.min(currentIndext, totalSlides - NProdutos));
+          slider.style.transform = `translateX(-${currentIndext * slideWidth}px)`;
+        }

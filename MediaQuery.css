@@ -1,0 +1,51 @@
+@media screen and (min-width: 1000px) {
+    .nav-b div {
+        display: none;
+    }
+
+    .nav-b ul {
+        display: flex;
+        position: relative;
+        right: 0;
+        gap: 40px;
+        justify-content: space-around;
+        flex-direction: row;
+        box-shadow: none;
+        height: 35px;
+        width: 100%;
+        align-items: center;
+        padding: 0 40px;
+        font-weight: 300;
+        font-size: 14px;
+        background: none;
+        color: black;
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+    nav {
+        padding: 15px 50px;
+    }
+
+    .slogan {
+        position: relative;
+        text-align: start;
+    }
+
+    nav > div.nav {
+        display: flex;
+    }
+
+    menu img {
+        display: block;
+    }
+
+    menu img.logo-mobile {
+        display: none;
+    }
+
+    .icone-menu {
+        min-width: 50px;
+    }
+}

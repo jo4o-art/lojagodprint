@@ -6,6 +6,7 @@
     <link rel="shortcut icon" type="imagex/png" href="imagens/favicon.png">
     <title>God Print</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="MediaQuery.css">
 </head>
 <body>
     <header>
@@ -20,6 +21,7 @@
         </nav>
         <menu>
             <img src="imagens/logo.png" alt="logo">
+            <img src="imagens/logo-god-print-mobile.png" alt="logo-god-print-mobile" class="logo-mobile">
             <div class="MenuDePesquisa">
                 <input type="text" id="menu de pesquisa" placeholder="Qual sua ideia pra hoje?">
                 <button id="ButtonPesquisa">O</button>
@@ -30,16 +32,25 @@
             <div id="favoritos" class="iconeMenu"></div>
             <div id="carrinho" class="iconeMenu"></div>
         </menu>
-        <div class="nav-b">
-            <li>Todos os produtos</li>
-            <li>Adesivo</li>
-            <li>Banner</li>
-            <li>Personalizados</li>
-            <li>Lona Iimpressa</li>
-            <li>Linha Têxtil</li>
-            <li>Cartão devisota</li>
-            <li>Wind Banner</li>
-            <li>Outros</li>  
+        <div class="nav-b" id="nav-b">
+            <ul>
+                <li>Todos os produtos</li>
+                <li>Adesivo</li>
+                <li>Banner</li>
+                <li>Personalizados</li>
+                <li>Lona Iimpressa</li>
+                <li>Linha Têxtil</li>
+                <li>Cartão devisota</li>
+                <li>Wind Banner</li>
+                <li>Outros</li>  
+            </ul>
+            <div id="btn-mobile">
+                <div class="mobileMenu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
         </div>
     </header>
     
@@ -59,11 +70,14 @@
     
         <button class="nav-button prev" id="prev">&#10094;</button>
         <button class="nav-button next" id="next">&#10095;</button>
-    
+        
     </div>
     <div class="radio-nav" id="radio-nav"></div>
-
+    
     <div class="NavLinhasDeProdutos"> 
+
+        <button id="anterior" class="BotoesRadioNav"><</button>
+
         <div class="carrossel-container">
             <div class="carrossel" id="carrossel">
                 <div class="LinhasDeProdutos">
@@ -100,10 +114,9 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="botoes">
-      <button id="anterior"><</button>
-      <button id="proximo">></button>
+
+        <button id="proximo" class="BotoesRadioNav">></button>
+
     </div>
 
     <div class="MaisVendidos">
@@ -135,48 +148,65 @@
 
         <h2>Linha Textil</h2>
         
-        <div class="ConteinerProdutos">
-            <div class="Produto">
-                <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                <div class="InfoProdutos">
-                    <span class="LinhaDeProducao">Linha de produção</span>
-                    <h3 class="NomeProduto">Nome Do Produto</h3>
-                    <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id vero perferendis est esse accusantium. Beatae facere, odio mollitia maiores cum natus inventore consectetur blanditiis iste, esse sint?</p>
-                </div>
-            </div>
-            <div class="Produto">
-                <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                <div class="InfoProdutos">
-                    <span class="LinhaDeProducao">Linha de produção</span>
-                    <h3 class="NomeProduto">Nome Do Produto</h3>
-                    <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id vero perferendis est esse accusantium. Beatae facere, odio mollitia maiores cum natus inventore consectetur blanditiis iste, esse sint?</p>
-                </div>
-            </div>
-            <div class="Produto">
-                <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                <div class="InfoProdutos">
-                    <span class="LinhaDeProducao">Linha de produção</span>
-                    <h3 class="NomeProduto">Nome Do Produto</h3>
-                    <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id vero perferendis est esse accusantium. Beatae facere, odio mollitia maiores cum natus inventore consectetur blanditiis iste, esse sint?</p>
-                </div>
-            </div>
-            <div class="Produto">
-                <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                <div class="InfoProdutos">
-                    <span class="LinhaDeProducao">Linha de produção</span>
-                    <h3 class="NomeProduto">Nome Do Produto</h3>
-                    <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id vero perferendis est esse accusantium. Beatae facere, odio mollitia maiores cum natus inventore consectetur blanditiis iste, esse sint?</p>
-                </div>
-            </div>
-            <div class="Produto">
-                <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                <div class="InfoProdutos">
-                    <span class="LinhaDeProducao">Linha de produção</span>
-                    <h3 class="NomeProduto">Nome Do Produto</h3>
-                    <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id vero perferendis est esse accusantium. Beatae facere, odio mollitia maiores cum natus inventore consectetur blanditiis iste, esse sint?</p>
+        <div class="ConteinerTextil" id="ConteinerTextil">
+
+            <button onclick="moveSlide(-1)" class="buttonTextil" id="AnteriorTextil"> < </button>
+
+
+            <div class="ConteinerProdutos">
+                <div class="ConteinerProduto" id="slider">
+                    <div class="Produto">
+                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
+                        <div class="InfoProdutos">
+                            <span class="LinhaDeProducao">Linha de produção</span>
+                            <h3 class="NomeProduto">Nome Do Produto</h3>
+                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id vero perferendis est esse accusantium. Beatae facere, odio mollitia maiores cum natus inventore consectetur blanditiis iste, esse sint?</p>
+                        </div>
+                    </div>
+                    <div class="Produto">
+                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
+                        <div class="InfoProdutos">
+                            <span class="LinhaDeProducao">Linha de produção</span>
+                            <h3 class="NomeProduto">Nome Do Produto</h3>
+                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id vero perferendis est esse accusantium. Beatae facere, odio mollitia maiores cum natus inventore consectetur blanditiis iste, esse sint?</p>
+                        </div>
+                    </div>
+                    <div class="Produto">
+                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
+                        <div class="InfoProdutos">
+                            <span class="LinhaDeProducao">Linha de produção</span>
+                            <h3 class="NomeProduto">Nome Do Produto</h3>
+                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id vero perferendis est esse accusantium. Beatae facere, odio mollitia maiores cum natus inventore consectetur blanditiis iste, esse sint?</p>
+                        </div>
+                    </div>
+                    <div class="Produto">
+                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
+                        <div class="InfoProdutos">
+                            <span class="LinhaDeProducao">Linha de produção</span>
+                            <h3 class="NomeProduto">Nome Do Produto</h3>
+                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id vero perferendis est esse accusantium. Beatae facere, odio mollitia maiores cum natus inventore consectetur blanditiis iste, esse sint?</p>
+                        </div>
+                    </div>
+                    <div class="Produto">
+                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
+                        <div class="InfoProdutos">
+                            <span class="LinhaDeProducao">Linha de produção</span>
+                            <h3 class="NomeProduto">Nome Do Produto</h3>
+                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id vero perferendis est esse accusantium. Beatae facere, odio mollitia maiores cum natus inventore consectetur blanditiis iste, esse sint?</p>
+                        </div>
+                    </div>
+                    <div class="Produto">
+                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
+                        <div class="InfoProdutos">
+                            <span class="LinhaDeProducao">Linha de produção</span>
+                            <h3 class="NomeProduto">Nome Do Produto</h3>
+                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id vero perferendis est esse accusantium. Beatae facere, odio mollitia maiores cum natus inventore consectetur blanditiis iste, esse sint?</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
+            <button onclick="moveSlide(1)" class="buttonTextil" id="ProximoTextil ">></button>
         </div>
 
     </div>

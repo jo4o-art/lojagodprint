@@ -17,25 +17,48 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 15px 50px;
   }
 
   nav > div.nav {
-    display: flex;
+    align-items: center;
+    justify-content: end;
+    display: none;
     gap: 40px;
+    width: 100%;
+  }
+
+  .slogan {
+    width: 100%;
+    text-align: end;
+    padding-right: 15px;
+    height: 35px;
+    line-height: 35px;
   }
 
   menu {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 15px;
+    margin: 10px 0;
+  }
+
+  menu img {
+    display: none;
+  }
+
+  menu img.logo-mobile {
+    display: block;
+    scale: .8;
+    position: absolute;
+    top: 0px;
+    left: 5px;
   }
 
   .iconeMenu {
     background-color: #000000;
-    width: 50px;
-    height: 40px;
+    min-width: 30px;
+    height: 30px;
+    margin: 5px;
   }
 
   .MenuDePesquisa > input {
@@ -46,28 +69,68 @@
     padding: 15px;
     border: 1px solid #cccccc;
     outline: none;
+    margin: 0 20px;
 }
 
 #ButtonPesquisa {
+  position: absolute;
+  transform: translate(-40px);
+  
+  border-radius: 0px 20px 20px 0px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #cccccc;
+}
+
+menu p {
+  padding: 10px;
+}
+
+.nav-b {
+  display: flex;
+  height: 38px;
+}
+
+div.mobileMenu {
+  cursor: pointer;
+  transition: .5s;
+  position: absolute;
+  right: 20px;
+}
+
+div.mobileMenu div {
+    width: 32px;
+    height: 2px;
+    background-color: #070707;
+    margin: 8px;
+}
+
+div.mobileMenu:hover {
+    transform: scale(1.1);
+}
+
+  .nav-b ul {
     position: absolute;
-    transform: translate(-40px);
-    
-    border-radius: 0px 20px 20px 0px;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #cccccc;
+    right: 70px;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: #0000007e;
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.63);
+    display: none;
   }
 
-  .nav-b {
+  .nav-b.active ul {
     display: flex;
-    gap: 40px;
-    justify-content: space-around;
-    height: 35px;
-    align-items: center;
-    padding: 0 40px;
-    font-weight: 300;
-    font-size: 14px;
-  }
+}
 
   .carousel {
     margin: auto;
@@ -77,12 +140,12 @@
     max-width: 100%;
     height: 300px;
     overflow: hidden;
-    border-radius: 12px;
+    /* border-radius: 12px; */
   }
 
   .carousel-track {
     display: flex;
-    transition: transform 1s ease;
+    transition: transform .5s ease;
     cursor: grab;
   }
 
@@ -96,7 +159,7 @@
   .carousel-slide img {
     min-width: 100%;
     display: block;
-    border-radius: 12px;
+    /* border-radius: 12px; */
   }
 
   .nav-button {
@@ -104,7 +167,7 @@
     height: 300px;
     position: absolute;
     top: 50%;
-    background: #7a7a7a10;
+    background: #7a7a7a1a;
     border: none;
     color: rgb(177, 177, 177);
     font-size: 2rem;
@@ -116,7 +179,8 @@
   }
 
   .nav-button:hover {
-    background: #7a7a7a40;
+    backdrop-filter: blur(10px);
+    background-color: #00000015;
   }
 
   .prev {
@@ -157,19 +221,24 @@
 
   .NavLinhasDeProdutos {
     display: flex;
-    overflow: hidden;
   }
 
   .LinhasDeProdutos {
     display: flex;
     flex-direction: column;
     text-align: center;
+    transition: .4s;
+    cursor: pointer;
+  }
+
+  .LinhasDeProdutos:hover {
+    scale: 1.05;
   }
 
   .carrossel-container {
     position: relative;
-    width: 1250px;
     overflow: hidden;
+    /* background-color: #023992; */
   }
 
   .carrossel {
@@ -187,32 +256,39 @@
     color: white;
   }
   
-  .botoes {
+  /* .botoes {
+    background-color: #023992;
     position: absolute;
-    top: 585px;
-    left: 130px;
-    width: 1340px;
+    top: 75vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1340px;
+    min-width: 350px;
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
-  }
+  } */
 
-  .botoes button {
+  .BotoesRadioNav {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background: #dddddd80;
+    background: #cacaca73;
     color: #989898;
-    width: 30px;
+    min-width: 30px;
+    margin: 10px;
     height: 30px;
+    margin-top: 80px;
     border: none;
     cursor: pointer;
     font-size: 15px;
     border-radius: 50%;
     transition: .5s;
+    /* transform: translate(50px); */
   }
 
-  .botoes button:hover {
+  .BotoesRadioNav:hover {
     background: #a4a4a4b3;
     color: white;
+    transform: scale(1.1);
   }
 
   .MaisVendidos {
@@ -242,10 +318,16 @@
     flex-basis: 200px;
     background-color: #023992;
     border-radius: 15px;
+    transition: .3s;
+    cursor: pointer;
+  }
+
+  .imgMaisVendidos:hover {
+    scale: 1.02;
   }
 
   .ConteinerMaisVendidos .img1 {
-    min-width: 450px;
+    min-width: 50%;
     background-color: #029218;
   }
 
@@ -253,38 +335,82 @@
     min-width: 35%;
     background-color: #920292;
   }
-
+  
   .LinhaTextil > h2 {
     text-align: center;
     margin: 40px;
     font-weight: 500;
   }
 
+  .ConteinerTextil {
+    display: flex;
+    align-items: center;
+  }
+
   .ConteinerProdutos {
+    max-width: 1100px;
+    overflow: hidden;
+  }
+  
+  .ConteinerProduto {
     display: flex;
     gap: 10px;
     margin-bottom: 50px;
+    height: 500px;
+    padding: 10px;
+    transition: transform 0.5s ease-in-out;
   }
 
   .Produto {
-    background-color: #029218;
-    width: 300px;
+    max-width: 250px;
+    min-width: 250px;
+    height: 98%;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 3px 3px 10px #00000067;
+    cursor: pointer;
+    transition: .35s;
   }
 
+  .buttonTextil {
+    margin: 10px;
+    display: flex;
+    font-family: 'montserrat';
+    font-weight: 500;
+    background-color: #989898;
+    color: white;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    border: none;
+    padding: 10px;
+    transition: .2s;
+  }
+
+  .buttonTextil:hover {
+    background-color: #5e5e5e;
+    scale: 1.1;
+  }
+  
+  .Produto:hover {
+    scale: 1.02;
+  }
+  
   .Produto > img {
     height: 250px;
     width: 250px;
     object-fit: cover;
   }
-
+  
   .Produto > .InfoProdutos {
     padding: 10px;
   }
 
   .LinhaDeProducao {
-    background-color: #989898;
+    background-color: #e4e4e4;
     padding: 1px 10px;
     border-radius: 10px;
     font-size: 10px;
@@ -297,4 +423,6 @@
 
   .InfoProdutos p {
     font-size: 13px;
+    color: #5e5e5e;
   }
+
