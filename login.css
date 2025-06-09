@@ -1,0 +1,92 @@
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+body {
+  background-image: url(imagens/fundo-login.png);
+  background-size: cover;
+  height: 100vh;
+  font-family: 'poppins';
+}
+
+.Principal {
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(30px);
+  text-align: center;
+  align-items: center;
+  width: 400px;
+  position: absolute;
+  border-radius: 30px;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.329);
+  margin-bottom: 20px;
+}
+
+.Pergunta {
+  border: none;
+  padding: 12px;
+  width: 90%;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  outline: none;
+}
+
+form .g1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.g1 .g2 {
+  display: flex;
+  gap: 5px;
+}
+
+form a {
+  right: 0;
+}
+
+.CaixaDeSelecao {
+  cursor: pointer;
+}
+
+p{
+  cursor: context-menu;
+  font-size: 14px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  transition: .3s;
+}
+
+a:hover {
+  color: rgb(0, 0, 104);
+  transform: scale(1.03);
+}
+
+.confirm {
+  background-color: rgb(63, 162, 255);
+  color: white;
+  font-size: 16pt;
+  border-radius: 25px;
+  margin-top: 25px;
+  width: 93%;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.confirm:hover {
+  transform: scale(1.02);
+}

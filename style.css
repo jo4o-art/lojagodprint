@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -55,10 +56,19 @@
   }
 
   .iconeMenu {
-    background-color: #000000;
     min-width: 30px;
     height: 30px;
     margin: 5px;
+    cursor: pointer;
+    transition: .3s;
+  }
+
+  .iconeMenu:hover {
+    transform: scale(1.05);
+  }
+
+  .iconeMenu img {
+    width: 30px;
   }
 
   .MenuDePesquisa > input {
@@ -80,6 +90,17 @@
   width: 40px;
   height: 40px;
   border: 1px solid #cccccc;
+  cursor: pointer;
+}
+
+#ButtonPesquisa img {
+  width: 20px;
+  margin: auto;
+  transition: .3s;
+}
+
+#ButtonPesquisa img:hover {
+  transform: scale(1.1);
 }
 
 menu p {
@@ -452,4 +473,10 @@ div.mobileMenu:hover {
 
 .imgProduto:hover {
   scale: 1.01;
+}
+
+footer {
+  background-color: #1a1a1a;
+  height: 200px;
+  width: 100vw;
 }
