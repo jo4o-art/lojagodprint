@@ -65,6 +65,13 @@
     --header-height: 78px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: "Riffic";
+    src: url(/RifficFree-Bold.ttf);
+}
+
 
 /* =========================================================
    02. RESET
@@ -1106,19 +1113,21 @@ svg {
 
     color: #fff;
 
-    font-family:
+    font-family: "Riffic";
+
+    /* font-family:
         "Manrope",
         "Inter",
-        sans-serif;
+        sans-serif; */
 
     font-size:
-        clamp(52px, 6.2vw, 90px);
+        clamp(52px, 6.2vw, 80px);
 
-    font-weight: 800;
+    /* font-weight: 700; */
 
     line-height: .93;
 
-    letter-spacing: -.065em;
+    /* letter-spacing: 1; */
 }
 
 
@@ -1323,56 +1332,57 @@ svg {
 }
 
 
+
 .hero-glow {
     position: absolute;
-
+    
     width: 420px;
     height: 420px;
-
+    
     border-radius: 50%;
-
+    
     background:
         radial-gradient(
             circle,
             rgba(25,200,137,.24),
             transparent 68%
-        );
-
-    filter: blur(30px);
-
-    animation:
-        heroGlow 7s
-        ease-in-out
-        infinite alternate;
-}
-
-
-@keyframes heroGlow {
-
-    from {
-        transform: scale(.92);
-        opacity: .65;
-    }
-
-    to {
-        transform: scale(1.08);
-        opacity: 1;
-    }
+            );
+            
+            filter: blur(30px);
+            
+            animation:
+            heroGlow 7s
+            ease-in-out
+            infinite alternate;
+        }
+        
+        
+        @keyframes heroGlow {
+            
+            from {
+                transform: scale(.92);
+                opacity: .65;
+            }
+            
+            to {
+                transform: scale(1.08);
+                opacity: 1;
+            }
 }
 
 
 .hero-grid-lines {
     position: absolute;
-
+    
     width: 520px;
     height: 520px;
-
+    
     border:
-        1px solid
-        rgba(255,255,255,.07);
-
+    1px solid
+    rgba(255,255,255,.07);
+    
     border-radius: 50%;
-
+    
     transform: rotate(18deg);
 }
 
@@ -1380,15 +1390,15 @@ svg {
 .hero-grid-lines::before,
 .hero-grid-lines::after {
     content: "";
-
+    
     position: absolute;
-
+    
     inset: 45px;
-
+    
     border:
-        1px solid
-        rgba(255,255,255,.05);
-
+    1px solid
+    rgba(255,255,255,.05);
+    
     border-radius: inherit;
 }
 
@@ -1399,75 +1409,85 @@ svg {
 
 
 /* =========================================================
-   18. HERO PRODUCTS
-   ========================================================= */
+18. HERO PRODUCTS
+========================================================= */
 
 .hero-product {
     position: absolute;
-
+    
     overflow: hidden;
-
+    
     border-radius: 24px;
-
+    
     border:
-        1px solid
-        rgba(255,255,255,.12);
-
+    1px solid
+    rgba(255,255,255,.12);
+    
     background:
-        #181d23;
-
+    #181d23;
+    
     box-shadow:
-        0 35px 90px
-        rgba(0,0,0,.38);
+    0 35px 90px
+    rgba(0,0,0,.38);
 }
 
-
+/* 
 .hero-product img {
     width: 100%;
     height: 100%;
-
+    
     object-fit: cover;
-
+    
     transition:
-        transform 1s
-        cubic-bezier(.2,.8,.2,1);
+    transform 1s
+    cubic-bezier(.2,.8,.2,1);
 }
 
 
 .hero-product:hover img {
     transform: scale(1.06);
-}
+} */
 
 
 .hero-product-main {
     z-index: 3;
-
+    
     width: 370px;
-    height: 470px;
-
+    height: 500px;
+    
     left: 50%;
     top: 50%;
-
+    
     transform:
-        translate(-50%, -50%)
-        rotate(-5deg);
+    translate(-50%, -50%)
+    rotate(-5deg);
 
     animation:
         heroMainFloat 6s
         ease-in-out
         infinite;
-}
+    }
+    
+    .hero-product-main .video-maquina {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        transition: .5s;
+    }
 
+    .hero-product-main .video-maquina:hover {
+        transform: scale(1.06);
+    }
 
 @keyframes heroMainFloat {
-
+    
     0%,
     100% {
         transform:
-            translate(-50%, -50%)
-            rotate(-5deg);
+        translate(-50%, -50%)
+        rotate(-5deg);
     }
-
+    
     50% {
         transform:
             translate(-50%, calc(-50% - 10px))
@@ -1477,9 +1497,9 @@ svg {
 
 
 .hero-product-small {
-    z-index: 2;
+    z-index: 3;
 
-    width: 230px;
+    width: 250px;
     height: 170px;
 
     right: 0;
@@ -1496,6 +1516,13 @@ svg {
         smallFloat 5s
         ease-in-out
         infinite;
+}
+
+.hero-product-small .video-caneca {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    transition: .5s;
 }
 
 
@@ -1810,19 +1837,21 @@ svg {
 
     color: var(--text);
 
-    font-family:
+    font-family: "Riffic";
+
+    /* font-family:
         "Manrope",
         "Inter",
-        sans-serif;
+        sans-serif; */
 
     font-size:
-        clamp(36px, 4.5vw, 60px);
+        clamp(36px, 4.5vw, 50px);
 
     font-weight: 800;
 
     line-height: .98;
 
-    letter-spacing: -.055em;
+    /* letter-spacing: -.055em; */
 }
 
 
@@ -2630,10 +2659,12 @@ svg {
     margin:
         17px 0;
 
-    font-family:
+    font-family: "Riffic";
+
+    /* font-family:
         "Manrope",
         "Inter",
-        sans-serif;
+        sans-serif; */
 
     font-size:
         clamp(42px, 5vw, 70px);
@@ -2642,7 +2673,7 @@ svg {
 
     line-height: .95;
 
-    letter-spacing: -.06em;
+    /* letter-spacing: -.06em; */
 }
 
 
@@ -3052,10 +3083,12 @@ svg {
 
     color: var(--text);
 
-    font-family:
+    font-family: "Riffic";
+
+    /* font-family:
         "Manrope",
         "Inter",
-        sans-serif;
+        sans-serif; */
 
     font-size:
         clamp(34px, 4.2vw, 58px);
@@ -3064,7 +3097,7 @@ svg {
 
     line-height: .98;
 
-    letter-spacing: -.055em;
+    letter-spacing: +.02em;
 }
 
 
@@ -4260,7 +4293,7 @@ svg {
 
     .hero h1 {
         font-size:
-            clamp(48px, 6.4vw, 75px);
+            clamp(48px, 6.4vw, 60px);
     }
 
 
@@ -4305,6 +4338,7 @@ svg {
     .desktop-search,
     .account-btn {
         display: none;
+        
     }
 
 
@@ -4556,7 +4590,9 @@ svg {
             20px 0;
 
         font-size:
-            clamp(45px, 14vw, 68px);
+            clamp(45px, 14vw, 50px);
+        
+        text-align: center;
     }
 
 
@@ -5131,7 +5167,8 @@ svg {
 
     .hero h1 {
         font-size:
-            clamp(42px, 13.5vw, 60px);
+            clamp(42px, 13.5vw, 30px);
+            text-align: center;
     }
 
 

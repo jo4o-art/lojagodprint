@@ -1,713 +1,1509 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="imagex/png" href="imagens/favicon.png">
-    <title>God Print</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="MediaQuery.css">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="God Print — impressão que transforma sua ideia em realidade.">
+
+    <meta name="theme-color"
+        content="#111111">
+
+    <title>God Print — Imprimindo sua ideia!</title>
+
+    <link rel="icon"
+        href="assets/logo-mobile.png">
+
+    <link rel="stylesheet"
+        href="css/style.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <p class="slogan">imprimindo sua ideia!</p>
-            <div class="nav">
-                <li>Meus pedidos</li>
-                <li>Central de ajuda</li>
-                <li>Conta</li>
-                <li>Contato</li>
+
+    <!-- =====================================================
+         LOADER
+         ===================================================== -->
+
+    <div class="loader"
+        id="loader">
+
+        <img src="assets/logo.png"
+            alt="God Print">
+
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="site-header"
+        id="siteHeader">
+
+        <div class="header-top">
+
+            <div class="container">
+
+                <div class="header-top-content">
+
+                    <span>
+                        imprimindo sua ideia!
+                    </span>
+
+                    <nav class="header-links">
+
+                        <a href="#">
+                            Meus pedidos
+                        </a>
+
+                        <a href="#">
+                            Central de ajuda
+                        </a>
+
+                        <a href="#">
+                            Conta
+                        </a>
+
+                        <a href="#">
+                            Contato
+                        </a>
+
+                    </nav>
+
+                </div>
+
             </div>
+
+        </div>
+
+
+        <div class="header-main">
+
+            <div class="container header-main-content">
+
+                <a href="#inicio"
+                    class="logo">
+
+                    <img src="assets/logo.png"
+                        alt="God Print">
+
+                </a>
+
+
+                <div class="desktop-search"
+                    id="desktopSearch">
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Qual sua ideia pra hoje?"
+                        autocomplete="off">
+
+                    <button
+                        type="button"
+                        id="searchSubmit"
+                        aria-label="Pesquisar">
+
+                        🔍
+
+                    </button>
+
+                    <div
+                        class="search-dropdown"
+                        id="searchDropdown">
+                    </div>
+
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="account-btn">
+
+                        Olá, Nome
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="favoritesBtn"
+                        aria-label="Favoritos">
+
+                        ♡
+
+                        <span id="favoriteCount">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="cartBtn"
+                        aria-label="Carrinho">
+
+                        🛒
+
+                        <span id="cartCount">
+                            0
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="menu-btn"
+                        id="menuBtn"
+                        type="button"
+                        aria-label="Abrir menu"
+                        aria-expanded="false"
+                        aria-controls="mobileNav">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVEGAÇÃO
+             ================================================= -->
+
+        <nav class="desktop-nav">
+
+            <div class="container">
+
+                <a href="#inicio">
+                    Início
+                </a>
+
+                <a href="#produtos">
+                    Todos os produtos
+                </a>
+
+                <a href="#personalizados">
+                    Personalizados
+                </a>
+
+                <a href="#categorias">
+                    Categorias
+                </a>
+
+                <a href="#textil">
+                    Linha Têxtil
+                </a>
+
+                <a href="#cards">
+                    Cartões de visita
+                </a>
+
+                <a href="#banner">
+                    Banner
+                </a>
+
+                <a href="#wind-banner">
+                    Wind Banner
+                </a>
+
+            </div>
+
         </nav>
-        <menu>
-            <img src="imagens/logo.png" alt="logo">
-            <img src="imagens/logo-god-print-mobile.png" alt="logo-god-print-mobile" class="logo-mobile">
-            <div class="MenuDePesquisa">
-                <input type="text" id="menu de pesquisa" placeholder="Qual sua ideia pra hoje?">
-                <button id="ButtonPesquisa"><img src="imagens/lupa.png" alt="pesquisar"></button>
-            </div>
-            <div>
-                <p>Olá, Nome</p>
-            </div>
-            <div id="favoritos" class="iconeMenu"><img src="imagens/coracao.png" alt="favoritos"></div>
-            <div id="carrinho" class="iconeMenu"><img src="imagens/carrinho.png" alt="carrinho"></div>
-        </menu>
-        <div class="nav-b" id="nav-b">
-            <ul>
-                <li>Todos os produtos</li>
-                <li>Adesivo</li>
-                <li>Banner</li>
-                <li>Personalizados</li>
-                <li>Lona Iimpressa</li>
-                <li>Linha Têxtil</li>
-                <li>Cartão devisota</li>
-                <li>Wind Banner</li>
-                <li>Outros</li>  
-            </ul>
-            <div id="btn-mobile">
-                <div class="mobileMenu">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
+
+
+        <!-- =================================================
+             MENU MOBILE
+             ================================================= -->
+
+        <nav
+            class="mobile-nav"
+            id="mobileNav">
+
+            <div class="mobile-search">
+
+                <input
+                    type="search"
+                    id="mobileSearchInput"
+                    placeholder="Qual sua ideia pra hoje?">
+
+                <div
+                    id="mobileSearchResults">
                 </div>
+
             </div>
-        </div>
+
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#produtos">
+                Todos os produtos
+            </a>
+
+            <a href="#personalizados">
+                Personalizados
+            </a>
+
+            <a href="#categorias">
+                Categorias
+            </a>
+
+            <a href="#textil">
+                Linha Têxtil
+            </a>
+
+            <a href="#cards">
+                Cartões de visita
+            </a>
+
+            <a href="#banner">
+                Banner
+            </a>
+
+            <a href="#wind-banner">
+                Wind Banner
+            </a>
+
+        </nav>
+
     </header>
-    
-    <div class="carousel">
-        <div class="carousel-track" id="track">
-          <!-- 9 imagens -->
-          <div class="carousel-slide"><img src="https://picsum.photos/id/1011/800/400" alt="1" /></div>
-          <div class="carousel-slide"><img src="https://picsum.photos/id/1012/800/400" alt="2" /></div>
-          <div class="carousel-slide"><img src="https://picsum.photos/id/1013/800/400" alt="3" /></div>
-          <div class="carousel-slide"><img src="https://picsum.photos/id/1015/800/400" alt="4" /></div>
-          <div class="carousel-slide"><img src="https://picsum.photos/id/1016/800/400" alt="5" /></div>
-          <div class="carousel-slide"><img src="https://picsum.photos/id/1018/800/400" alt="6" /></div>
-          <div class="carousel-slide"><img src="https://picsum.photos/id/1020/800/400" alt="7" /></div>
-          <div class="carousel-slide"><img src="https://picsum.photos/id/1021/800/400" alt="8" /></div>
-          <div class="carousel-slide"><img src="https://picsum.photos/id/1024/800/400" alt="9" /></div>
+
+
+    <!-- =====================================================
+         CONTEÚDO
+         ===================================================== -->
+
+    <main id="inicio">
+
+
+        <!-- =================================================
+             HERO
+             ================================================= -->
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        GOD PRINT
+                    </span>
+
+                    <h1>
+                        Imprimindo sua ideia!
+                    </h1>
+
+                    <p>
+                        Transformamos suas ideias em materiais
+                        impressos com qualidade profissional.
+                    </p>
+
+                    <a href="#produtos"
+                        class="btn">
+
+                        Ver produtos
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORIAS
+             ================================================= -->
+
+        <section class="section" id="categorias">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        Encontre o que precisa
+                    </span>
+
+                    <h2>
+                        Categorias
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="category-grid"
+                    id="categoryGrid">
+
+
+                    <!-- IMAGEM 01 -->
+                    <a href="#produtos"
+                        class="category-card reveal"
+                        data-category="Adesivos">
+
+                        <div
+                            class="category-card__bg"
+                            style="background-image:url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85');">
+                        </div>
+
+                        <div class="category-card__body">
+
+                            <small>
+                                Impressão personalizada
+                            </small>
+
+                            <strong>
+                                Adesivos
+                            </strong>
+
+                            <span>
+                                Ver produtos
+                                <b>→</b>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- IMAGEM 02 -->
+                    <a href="#produtos"
+                        class="category-card reveal"
+                        data-category="Banners">
+
+                        <div
+                            class="category-card__bg"
+                            style="background-image:url('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85');">
+                        </div>
+
+                        <div class="category-card__body">
+
+                            <small>
+                                Comunicação visual
+                            </small>
+
+                            <strong>
+                                Banners
+                            </strong>
+
+                            <span>
+                                Ver produtos
+                                <b>→</b>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- IMAGEM 03 -->
+                    <a href="#produtos"
+                        class="category-card reveal"
+                        data-category="Personalizados">
+
+                        <div
+                            class="category-card__bg"
+                            style="background-image:url('https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=900&q=85');">
+                        </div>
+
+                        <div class="category-card__body">
+
+                            <small>
+                                Produtos exclusivos
+                            </small>
+
+                            <strong>
+                                Personalizados
+                            </strong>
+
+                            <span>
+                                Ver produtos
+                                <b>→</b>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- IMAGEM 04 -->
+                    <a href="#produtos"
+                        class="category-card reveal"
+                        data-category="Linha Têxtil">
+
+                        <div
+                            class="category-card__bg"
+                            style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85');">
+                        </div>
+
+                        <div class="category-card__body">
+
+                            <small>
+                                Camisetas e tecidos
+                            </small>
+
+                            <strong>
+                                Linha Têxtil
+                            </strong>
+
+                            <span>
+                                Ver produtos
+                                <b>→</b>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- IMAGEM 05 -->
+                    <a href="#produtos"
+                        class="category-card reveal"
+                        data-category="Cartões">
+
+                        <div
+                            class="category-card__bg"
+                            style="background-image:url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85');">
+                        </div>
+
+                        <div class="category-card__body">
+
+                            <small>
+                                Sua marca em destaque
+                            </small>
+
+                            <strong>
+                                Cartões
+                            </strong>
+
+                            <span>
+                                Ver produtos
+                                <b>→</b>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- IMAGEM 06 -->
+                    <a href="#produtos"
+                        class="category-card reveal"
+                        data-category="Lonas">
+
+                        <div
+                            class="category-card__bg"
+                            style="background-image:url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85');">
+                        </div>
+
+                        <div class="category-card__body">
+
+                            <small>
+                                Grande formato
+                            </small>
+
+                            <strong>
+                                Lonas
+                            </strong>
+
+                            <span>
+                                Ver produtos
+                                <b>→</b>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- IMAGEM 07 -->
+                    <a href="#produtos"
+                        class="category-card reveal"
+                        data-category="Wind Banner">
+
+                        <div
+                            class="category-card__bg"
+                            style="background-image:url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=85');">
+                        </div>
+
+                        <div class="category-card__body">
+
+                            <small>
+                                Divulgação profissional
+                            </small>
+
+                            <strong>
+                                Wind Banner
+                            </strong>
+
+                            <span>
+                                Ver produtos
+                                <b>→</b>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- IMAGEM 08 -->
+                    <a href="#produtos"
+                        class="category-card reveal"
+                        data-category="Outros">
+
+                        <div
+                            class="category-card__bg"
+                            style="background-image:url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85');">
+                        </div>
+
+                        <div class="category-card__body">
+
+                            <small>
+                                Soluções para sua marca
+                            </small>
+
+                            <strong>
+                                Outros
+                            </strong>
+
+                            <span>
+                                Ver produtos
+                                <b>→</b>
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PRODUTOS — MAIS VENDIDOS
+             ================================================= -->
+
+        <section class="section" id="produtos">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        Destaques
+                    </span>
+
+                    <h2>
+                        Mais vendidos
+                    </h2>
+
+                </div>
+
+
+                <div class="carousel-wrapper">
+
+                    <button
+                        class="carousel-btn"
+                        type="button"
+                        data-carousel="featured"
+                        data-dir="-1"
+                        aria-label="Anterior">
+
+                        ←
+
+                    </button>
+
+
+                    <div
+                        class="product-carousel"
+                        id="featuredCarousel">
+
+
+                        <!-- PRODUTO 01 -->
+
+                        <article
+                            class="product-card reveal"
+                            data-id="p01"
+                            data-name="Camiseta personalizada"
+                            data-category="Linha Têxtil"
+                            data-price="39.90"
+                            data-image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85">
+
+                            <div class="product-image">
+
+                                <img
+                                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85"
+                                    alt="Camiseta personalizada"
+                                    loading="lazy">
+
+                                <button
+                                    class="favorite"
+                                    type="button"
+                                    data-favorite="p01"
+                                    aria-label="Adicionar aos favoritos">
+
+                                    ♡
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="product-info">
+
+                                <small>
+                                    Linha Têxtil
+                                </small>
+
+                                <h3>
+                                    Camiseta personalizada
+                                </h3>
+
+                                <p>
+                                    Camiseta premium personalizada
+                                </p>
+
+                                <div class="price">
+
+                                    <strong>
+                                        R$ 39,90
+                                    </strong>
+
+                                </div>
+
+                                <button
+                                    class="product-add"
+                                    type="button"
+                                    data-add-cart="p01">
+
+                                    Adicionar ao carrinho
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUTO 02 -->
+
+                        <article
+                            class="product-card reveal"
+                            data-id="p02"
+                            data-name="Caneca personalizada"
+                            data-category="Personalizados"
+                            data-price="29.90"
+                            data-image="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85">
+
+                            <div class="product-image">
+
+                                <img
+                                    src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85"
+                                    alt="Caneca personalizada"
+                                    loading="lazy">
+
+                                <span class="sale">
+                                    Oferta
+                                </span>
+
+                                <button
+                                    class="favorite"
+                                    type="button"
+                                    data-favorite="p02">
+
+                                    ♡
+
+                                </button>
+
+                            </div>
+
+
+                            <div class="product-info">
+
+                                <small>
+                                    Personalizados
+                                </small>
+
+                                <h3>
+                                    Caneca personalizada
+                                </h3>
+
+                                <p>
+                                    Caneca personalizada para presentes
+                                </p>
+
+                                <div class="price">
+
+                                    <strong>
+                                        R$ 29,90
+                                    </strong>
+
+                                </div>
+
+                                <button
+                                    class="product-add"
+                                    type="button"
+                                    data-add-cart="p02">
+
+                                    Adicionar ao carrinho
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUTO 03 -->
+
+                        <article
+                            class="product-card reveal"
+                            data-id="p03"
+                            data-name="Banner personalizado"
+                            data-category="Banner"
+                            data-price="49.90"
+                            data-image="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=900&q=85">
+
+                            <div class="product-image">
+
+                                <img
+                                    src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=900&q=85"
+                                    alt="Banner personalizado"
+                                    loading="lazy">
+
+                                <button
+                                    class="favorite"
+                                    type="button"
+                                    data-favorite="p03">
+
+                                    ♡
+
+                                </button>
+
+                            </div>
+
+                            <div class="product-info">
+
+                                <small>
+                                    Banner
+                                </small>
+
+                                <h3>
+                                    Banner personalizado
+                                </h3>
+
+                                <p>
+                                    Banner para divulgação
+                                </p>
+
+                                <div class="price">
+
+                                    <strong>
+                                        R$ 49,90
+                                    </strong>
+
+                                </div>
+
+                                <button
+                                    class="product-add"
+                                    type="button"
+                                    data-add-cart="p03">
+
+                                    Adicionar ao carrinho
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUTO 04 -->
+
+                        <article
+                            class="product-card reveal"
+                            data-id="p04"
+                            data-name="Adesivo personalizado"
+                            data-category="Adesivos"
+                            data-price="19.90"
+                            data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85">
+
+                            <div class="product-image">
+
+                                <img
+                                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
+                                    alt="Adesivo personalizado"
+                                    loading="lazy">
+
+                                <span class="sale">
+                                    Oferta
+                                </span>
+
+                                <button
+                                    class="favorite"
+                                    type="button"
+                                    data-favorite="p04">
+
+                                    ♡
+
+                                </button>
+
+                            </div>
+
+                            <div class="product-info">
+
+                                <small>
+                                    Adesivos
+                                </small>
+
+                                <h3>
+                                    Adesivo personalizado
+                                </h3>
+
+                                <p>
+                                    Adesivo com sua arte
+                                </p>
+
+                                <div class="price">
+
+                                    <strong>
+                                        R$ 19,90
+                                    </strong>
+
+                                </div>
+
+                                <button
+                                    class="product-add"
+                                    type="button"
+                                    data-add-cart="p04">
+
+                                    Adicionar ao carrinho
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUTO 05 -->
+
+                        <article
+                            class="product-card reveal"
+                            data-id="p05"
+                            data-name="Cartão de visita"
+                            data-category="Cartões"
+                            data-price="35.00"
+                            data-image="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85">
+
+                            <div class="product-image">
+
+                                <img
+                                    src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85"
+                                    alt="Cartão de visita"
+                                    loading="lazy">
+
+                                <button
+                                    class="favorite"
+                                    type="button"
+                                    data-favorite="p05">
+
+                                    ♡
+
+                                </button>
+
+                            </div>
+
+                            <div class="product-info">
+
+                                <small>
+                                    Cartões
+                                </small>
+
+                                <h3>
+                                    Cartão de visita
+                                </h3>
+
+                                <p>
+                                    Cartão de visita profissional
+                                </p>
+
+                                <div class="price">
+
+                                    <strong>
+                                        R$ 35,00
+                                    </strong>
+
+                                </div>
+
+                                <button
+                                    class="product-add"
+                                    type="button"
+                                    data-add-cart="p05">
+
+                                    Adicionar ao carrinho
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUTO 06 -->
+
+                        <article
+                            class="product-card reveal"
+                            data-id="p06"
+                            data-name="Lona impressa"
+                            data-category="Lonas"
+                            data-price="59.90"
+                            data-image="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85">
+
+                            <div class="product-image">
+
+                                <img
+                                    src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85"
+                                    alt="Lona impressa"
+                                    loading="lazy">
+
+                                <button
+                                    class="favorite"
+                                    type="button"
+                                    data-favorite="p06">
+
+                                    ♡
+
+                                </button>
+
+                            </div>
+
+                            <div class="product-info">
+
+                                <small>
+                                    Lonas
+                                </small>
+
+                                <h3>
+                                    Lona impressa
+                                </h3>
+
+                                <p>
+                                    Lona para comunicação visual
+                                </p>
+
+                                <div class="price">
+
+                                    <strong>
+                                        R$ 59,90
+                                    </strong>
+
+                                </div>
+
+                                <button
+                                    class="product-add"
+                                    type="button"
+                                    data-add-cart="p06">
+
+                                    Adicionar ao carrinho
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUTO 07 -->
+
+                        <article
+                            class="product-card reveal"
+                            data-id="p07"
+                            data-name="Wind Banner"
+                            data-category="Wind Banner"
+                            data-price="119.90"
+                            data-image="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=85">
+
+                            <div class="product-image">
+
+                                <img
+                                    src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=85"
+                                    alt="Wind Banner"
+                                    loading="lazy">
+
+                                <span class="sale">
+                                    Oferta
+                                </span>
+
+                                <button
+                                    class="favorite"
+                                    type="button"
+                                    data-favorite="p07">
+
+                                    ♡
+
+                                </button>
+
+                            </div>
+
+                            <div class="product-info">
+
+                                <small>
+                                    Wind Banner
+                                </small>
+
+                                <h3>
+                                    Wind Banner
+                                </h3>
+
+                                <p>
+                                    Wind banner para eventos
+                                </p>
+
+                                <div class="price">
+
+                                    <strong>
+                                        R$ 119,90
+                                    </strong>
+
+                                </div>
+
+                                <button
+                                    class="product-add"
+                                    type="button"
+                                    data-add-cart="p07">
+
+                                    Adicionar ao carrinho
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUTO 08 -->
+
+                        <article
+                            class="product-card reveal"
+                            data-id="p08"
+                            data-name="Sacola personalizada"
+                            data-category="Personalizados"
+                            data-price="44.90"
+                            data-image="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85">
+
+                            <div class="product-image">
+
+                                <img
+                                    src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85"
+                                    alt="Sacola personalizada"
+                                    loading="lazy">
+
+                                <button
+                                    class="favorite"
+                                    type="button"
+                                    data-favorite="p08">
+
+                                    ♡
+
+                                </button>
+
+                            </div>
+
+                            <div class="product-info">
+
+                                <small>
+                                    Personalizados
+                                </small>
+
+                                <h3>
+                                    Sacola personalizada
+                                </h3>
+
+                                <p>
+                                    Sacola personalizada para sua marca
+                                </p>
+
+                                <div class="price">
+
+                                    <strong>
+                                        R$ 44,90
+                                    </strong>
+
+                                </div>
+
+                                <button
+                                    class="product-add"
+                                    type="button"
+                                    data-add-cart="p08">
+
+                                    Adicionar ao carrinho
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <button
+                        class="carousel-btn"
+                        type="button"
+                        data-carousel="featured"
+                        data-dir="1"
+                        aria-label="Próximo">
+
+                        →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PERSONALIZADOS
+             ================================================= -->
+
+        <section
+            class="section"
+            id="personalizados">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        Do seu jeito
+                    </span>
+
+                    <h2>
+                        Personalizados
+                    </h2>
+
+                </div>
+
+
+                <div class="carousel-wrapper">
+
+                    <button
+                        class="carousel-btn"
+                        type="button"
+                        data-carousel="custom"
+                        data-dir="-1">
+
+                        ←
+
+                    </button>
+
+
+                    <div
+                        class="product-carousel"
+                        id="customCarousel">
+
+                        <!--
+                            Os produtos ficam diretamente aqui no HTML.
+                            Basta duplicar um .product-card para adicionar
+                            novos produtos.
+                        -->
+
+                        <!-- PRODUTOS 01–08 -->
+                        <!-- mesma estrutura dos produtos acima -->
+
+                    </div>
+
+
+                    <button
+                        class="carousel-btn"
+                        type="button"
+                        data-carousel="custom"
+                        data-dir="1">
+
+                        →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CARTÕES
+             ================================================= -->
+
+        <section
+            class="section section-dark"
+            id="cards">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span>
+                        Sua marca
+                    </span>
+
+                    <h2>
+                        Cartões de Visita
+                    </h2>
+
+                </div>
+
+
+                <div class="carousel-wrapper">
+
+                    <button
+                        class="carousel-btn"
+                        type="button"
+                        data-carousel="cards"
+                        data-dir="-1">
+
+                        ←
+
+                    </button>
+
+
+                    <div
+                        class="product-carousel"
+                        id="cardsCarousel">
+
+                        <!--
+                            Produtos inseridos diretamente no HTML.
+                        -->
+
+                    </div>
+
+
+                    <button
+                        class="carousel-btn"
+                        type="button"
+                        data-carousel="cards"
+                        data-dir="1">
+
+                        →
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         CARRINHO
+         ===================================================== -->
+
+    <aside
+        class="cart-drawer"
+        id="cartDrawer"
+        aria-hidden="true">
+
+        <div class="drawer-header">
+
+            <h2>
+                Seu carrinho
+            </h2>
+
+            <button
+                type="button"
+                id="closeCart">
+
+                ×
+
+            </button>
+
         </div>
-    
-        <button class="nav-button prev" id="prev">&#10094;</button>
-        <button class="nav-button next" id="next">&#10095;</button>
-        
+
+
+        <div
+            class="cart-items"
+            id="cartItems">
+        </div>
+
+
+        <div
+            class="cart-empty"
+            id="cartEmpty">
+
+            <div class="empty-icon">
+                🛒
+            </div>
+
+            <strong>
+                Seu carrinho está vazio
+            </strong>
+
+            <small>
+                Adicione produtos para começar seu pedido.
+            </small>
+
+        </div>
+
+
+        <div class="cart-summary">
+
+            <div>
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="cartSubtotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="cartTotal">
+                    R$ 0,00
+                </strong>
+
+            </div>
+
+
+            <button
+                class="btn checkout-btn"
+                id="checkoutBtn"
+                type="button">
+
+                Finalizar pedido
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         FAVORITOS
+         ===================================================== -->
+
+    <aside
+        class="favorites-panel"
+        id="favoritesPanel"
+        aria-hidden="true">
+
+        <div class="drawer-header">
+
+            <h2>
+                Favoritos
+            </h2>
+
+            <button
+                type="button"
+                id="closeFavorites">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div
+            class="favorite-items"
+            id="favoriteItems">
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         BACKDROP
+         ===================================================== -->
+
+    <div
+        class="drawer-backdrop"
+        id="drawerBackdrop">
     </div>
-    <div class="radio-nav" id="radio-nav"></div>
-    
-    <div class="NavLinhasDeProdutos"> 
-
-        <button id="anterior" class="BotoesRadioNav"><</button>
-
-        <div class="carrossel-container">
-            <div class="carrossel" id="carrossel">
-                <div class="LinhasDeProdutos">
-                    <img src="imagens/adesivo-logo.png" alt="adesivo-logo">
-                    <p>Adesivo</p>
-                </div>
-                <div class="LinhasDeProdutos">
-                    <img src="imagens/banner-logo.png" alt="banner-logo">
-                    <p>Banner</p>
-                </div>
-                <div class="LinhasDeProdutos">
-                    <img src="imagens/caneca-logo.png" alt="Personalizados">
-                    <p>Personalizados</p>
-                </div>
-                <div class="LinhasDeProdutos">
-                    <img src="imagens/lona-impressa-logo.png" alt="lona-impressa-logo">
-                    <p>Lona Iimpressa</p>
-                </div>
-                <div class="LinhasDeProdutos">
-                    <img src="imagens/lonha-textil-logo.png" alt="linha-textil">
-                    <p>Linha Têxtil</p>
-                </div>
-                <div class="LinhasDeProdutos">
-                    <img src="imagens/cartoes-de-visita-logo.png" alt="cartoes-de-visita-logo">
-                    <p>Cartões de visita</p>
-                </div>
-                <div class="LinhasDeProdutos">
-                    <img src="imagens/wind-banner-logo.png" alt="wind-banner-logo">
-                    <p>Wind Banner</p>
-                </div>
-                <div class="LinhasDeProdutos">
-                    <img src="imagens/bone-logo.png" alt="bone-logo">
-                    <p>Boné</p>
-                </div>
-            </div>
-        </div>
-
-        <button id="proximo" class="BotoesRadioNav">></button>
-
-    </div>
-    <div class="MaisVendidos">
-        <h2>Mais vendidos</h2>
-
-        <div class="ConteinerMaisVendidos">
-        
-            <div class="imgMaisVendidos img1">
-                <!-- <img src="imagens/teste.jpg" alt="teste"> -->
-            </div>
-            <div class="imgMaisVendidos img2">
-                <!-- <img src="imagens/teste.jpg" alt="teste"> -->
-            </div>
-            <div class="imgMaisVendidos img3">
-                <!-- <img src="imagens/teste.jpg" alt="teste"> -->
-            </div>
-            <div class="imgMaisVendidos img4">
-                <!-- <img src="imagens/teste.jpg" alt="teste"> -->
-            </div>
-            <div class="imgMaisVendidos img5">
-                <!-- <img src="imagens/teste.jpg" alt="teste"> -->
-            </div>
-
-        </div>
-
-        
-    </div>
-    <div class="LinhaTextil">
-
-        <h2>Linha Textil</h2>
-        
-        <div class="ConteinerTextil Conteiner" id="ConteinerTextil">
-
-            <button onclick="moveSlideTexil(-1)" class="buttonProduto" id="AnteriorTextil"> < </button>
-
-            <div class="ConteinerProdutos">
-                <div class="ConteinerProduto" id="sliderTextil">
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <button onclick="moveSlideTexil(1)" class="buttonProduto" id="ProximoTextil ">></button>
-        </div>
-
-        <div class="imgProduto">
-            <!-- <img src="" alt=""> -->
-        </div>
-
-    </div>
-    <div class="LinhaPersonalizados">
-
-        <h2>Personaliazdos</h2>
-        
-        <div class="ConteinerPersonalizados Conteiner" id="ConteinerPersonalizados">
-
-            <button onclick="moveSlidePersonalizados(-1)" class="buttonProduto" id="AnteriorTextil"> < </button>
 
 
-            <div class="ConteinerProdutos">
-                <div class="ConteinerProduto" id="sliderPersonalizados">
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- =====================================================
+         WHATSAPP
+         ===================================================== -->
 
-            <button onclick="moveSlidePersonalizados(1)" class="buttonProduto" id="ProximoPersonalizados ">></button>
-        </div>
+    <a
+        href="https://wa.me/5591992800697"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener">
 
-        <div class="imgProduto">
-            <!-- <img src="" alt=""> -->
-        </div>
+        WhatsApp
 
-    </div>
-    <div class="LinhaCartoes">
-
-        <h2>Cartões de Visita</h2>
-        
-        <div class="Conteiner">
-
-            <button onclick="moveSlideCartoes(-1)" class="buttonProduto"> < </button>
+    </a>
 
 
-            <div class="ConteinerProdutos">
-                <div class="ConteinerProduto" id="sliderCartoes">
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- =====================================================
+         BACK TO TOP
+         ===================================================== -->
 
-            <button onclick="moveSlideCartoes(1)" class="buttonProduto">></button>
-        </div>
+    <button
+        type="button"
+        class="back-top"
+        id="backTop"
+        aria-label="Voltar ao topo">
 
-        <div class="imgProduto">
-            <!-- <img src="" alt=""> -->
-        </div>
+        ↑
 
-    </div>
-    <div class="LinhaBanner">
-
-        <h2>Banner</h2>
-        
-        <div class="Conteiner">
-
-            <button onclick="moveSlideBanner(-1)" class="buttonProduto"> < </button>
+    </button>
 
 
-            <div class="ConteinerProdutos">
-                <div class="ConteinerProduto" id="sliderBanner">
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- =====================================================
+         TOAST
+         ===================================================== -->
 
-            <button onclick="moveSlideBanner(1)" class="buttonProduto">></button>
-        </div>
-
-        <div class="imgProduto">
-            <!-- <img src="" alt=""> -->
-        </div>
-
-    </div>
-    <div class="LinhaPainel">
-
-        <h2>Painel</h2>
-        
-        <div class="Conteiner">
-
-            <button onclick="moveSlidePainel(-1)" class="buttonProduto"> < </button>
-
-
-            <div class="ConteinerProdutos">
-                <div class="ConteinerProduto" id="sliderPainel">
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <button onclick="moveSlidePainel(1)" class="buttonProduto">></button>
-        </div>
-
-        <div class="imgProduto">
-            <!-- <img src="" alt=""> -->
-        </div>
-
-    </div>
-    <div class="LinhaWindBanner">
-
-        <h2>Wind Banner</h2>
-        
-        <div class="Conteiner">
-
-            <button onclick="moveSlideWindBanner(-1)" class="buttonProduto"> < </button>
-
-
-            <div class="ConteinerProdutos">
-                <div class="ConteinerProduto" id="sliderWindBanner">
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                    <div class="Produto">
-                        <img src="imagens/teste.jpg" alt="teste" class="imgProdut">
-                        <div class="InfoProdutos">
-                            <span class="LinhaDeProducao">Linha de produção</span>
-                            <h3 class="NomeProduto">Nome Do Produto</h3>
-                            <p class="DescricaoProduto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem voluptatibus dolore id</p>
-                        </div>
-                        <div class="valor">
-                            <h3>R$35,00</h3>
-                            <p>/1 unidade</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <button onclick="moveSlideWindBanner(1)" class="buttonProduto">></button>
-        </div>
-
-        <div class="imgProduto">
-            <!-- <img src="" alt=""> -->
-        </div>
-
+    <div
+        class="toast"
+        id="toast">
     </div>
 
-    <script src="script.js"></script>
+
+    <script
+        src="js/teste.js"
+        defer>
+    </script>
 
 </body>
+
 </html>
