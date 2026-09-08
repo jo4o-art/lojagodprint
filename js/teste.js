@@ -1,1430 +1,473 @@
 /* =========================================================
    GOD PRINT — SCRIPT PRINCIPAL
+   JavaScript ES6+
    ========================================================= */
 
-'use strict';
 
 /* =========================================================
-   FUNÇÕES AUXILIARES
+   DADOS DOS PRODUTOS
    ========================================================= */
 
-const $ = (selector, parent = document) => parent.querySelector(selector);
-const $$ = (selector, parent = document) => [
-  ...parent.querySelectorAll(selector)
-];
-
-const storage = {
-  get(key, fallback = null) {
-    try {
-      const value = localStorage.getItem(key);
-      return value !== null ? JSON.parse(value) : fallback;
-    } catch {
-      return fallback;
-    }
+const products = [
+  {
+    id: 1,
+    name: "Camiseta Personalizada Premium",
+    category: "Linha Têxtil",
+    price: 59.90,
+    oldPrice: 69.90,
+    image:
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85",
+    description:
+      "Algodão premium com impressão de alta definição.",
+    sale: "Oferta"
   },
 
-  set(key, value) {
-    try {
-      localStorage.setItem(key, JSON.stringify(value));
-    } catch {
-      // Evita quebrar o site caso o localStorage esteja indisponível
-    }
+  {
+    id: 2,
+    name: "Adesivo Personalizado",
+    category: "Adesivos",
+    price: 18.00,
+    image:
+      "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=900&q=85",
+    description:
+      "Recorte preciso e acabamento resistente."
+  },
+
+  {
+    id: 3,
+    name: "Cartão de Visita Premium",
+    category: "Cartões de Visita",
+    price: 35.00,
+    oldPrice: 45.00,
+    image:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=85",
+    description:
+      "Impressão profissional para sua marca.",
+    sale: "-22%"
+  },
+
+  {
+    id: 4,
+    name: "Banner para sua marca",
+    category: "Banners",
+    price: 49.90,
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85",
+    description:
+      "Comunicação visual com grande impacto."
+  },
+
+  {
+    id: 5,
+    name: "Caneca Personalizada",
+    category: "Personalizados",
+    price: 32.00,
+    image:
+      "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?auto=format&fit=crop&w=900&q=85",
+    description:
+      "Sua arte impressa com acabamento premium."
+  },
+
+  {
+    id: 6,
+    name: "Boné Personalizado",
+    category: "Bonés",
+    price: 44.90,
+    image:
+      "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=900&q=85",
+    description:
+      "Personalização para equipes e eventos."
+  },
+
+  {
+    id: 7,
+    name: "Lona Impressa",
+    category: "Lonas",
+    price: 79.90,
+    image:
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85",
+    description:
+      "Alta durabilidade para comunicação externa."
+  },
+
+  {
+    id: 8,
+    name: "Wind Banner",
+    category: "Wind Banner",
+    price: 119.90,
+    image:
+      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85",
+    description:
+      "Presença visual para eventos e ações."
+  },
+
+  {
+    id: 9,
+    name: "Painel Personalizado",
+    category: "Painéis",
+    price: 149.90,
+    image:
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=85",
+    description:
+      "Painéis para ambientes, eventos e vitrines."
+  },
+
+  {
+    id: 10,
+    name: "Ecobag Personalizada",
+    category: "Personalizados",
+    price: 39.90,
+    image:
+      "https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=85",
+    description:
+      "Estilo, utilidade e identidade visual."
   }
-};
-
-function formatMoney(value) {
-  const number = Number(value) || 0;
-
-  return number.toLocaleString('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  });
-}
+];
 
 
 /* =========================================================
-   LOADER
+   CATEGORIAS
    ========================================================= */
 
-document.addEventListener('DOMContentLoaded', () => {
+const categories = [
+  [
+    "Adesivos",
+    "Impressão e recorte",
+    "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=700&q=80"
+  ],
 
-  const loader = $('#loader');
+  [
+    "Banners",
+    "Comunicação visual",
+    "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=700&q=80"
+  ],
 
-  if (loader) {
-    setTimeout(() => {
-      loader.classList.add('hidden');
+  [
+    "Personalizados",
+    "Produtos com sua marca",
+    "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?auto=format&fit=crop&w=700&q=80"
+  ],
 
-      setTimeout(() => {
-        loader.remove();
-      }, 500);
-    }, 500);
+  [
+    "Lonas",
+    "Alta durabilidade",
+    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=700&q=80"
+  ],
+
+  [
+    "Linha Têxtil",
+    "Vista sua marca",
+    "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"
+  ],
+
+  [
+    "Cartões de Visita",
+    "Sua marca na mão",
+    "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=700&q=80"
+  ],
+
+  [
+    "Wind Banner",
+    "Destaque em eventos",
+    "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=700&q=80"
+  ],
+
+  [
+    "Bonés",
+    "Identidade que veste",
+    "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=700&q=80"
+  ],
+
+  [
+    "Painéis",
+    "Ambientes e eventos",
+    "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=700&q=80"
+  ],
+
+  [
+    "Outros",
+    "Mais possibilidades",
+    "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=700&q=80"
+  ]
+];
+
+
+/* =========================================================
+   FUNÇÕES UTILITÁRIAS
+   ========================================================= */
+
+const $ = (selector, element = document) =>
+  element.querySelector(selector);
+
+const $$ = (selector, element = document) =>
+  [...element.querySelectorAll(selector)];
+
+const money = value =>
+  value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+
+
+/* =========================================================
+   BUSCA
+   ========================================================= */
+
+function searchProducts(query, target) {
+
+  if (!target) {
+    return;
   }
 
-});
+  const search = query
+    .trim()
+    .toLowerCase();
 
 
-/* =========================================================
-   HEADER / SCROLL
-   ========================================================= */
+  if (!search) {
 
-const siteHeader = $('#siteHeader');
+    target.innerHTML = `
+      <div style="
+        padding:12px;
+        color:#89919b;
+        font-size:11px;
+      ">
+        Digite o nome de um produto ou categoria.
+      </div>
+    `;
 
-function updateHeader() {
-  if (!siteHeader) return;
-
-  if (window.scrollY > 30) {
-    siteHeader.classList.add('scrolled');
-  } else {
-    siteHeader.classList.remove('scrolled');
+    return;
   }
-}
-
-window.addEventListener('scroll', updateHeader, {
-  passive: true
-});
-
-updateHeader();
 
 
-/* =========================================================
-   MENU MOBILE
-   ========================================================= */
+  const results = products
+    .filter(product => {
 
-const menuBtn = $('#menuBtn');
-const mobileNav = $('#mobileNav');
+      const searchableText = `
+        ${product.name}
+        ${product.category}
+        ${product.description}
+      `.toLowerCase();
 
-if (menuBtn && mobileNav) {
+      return searchableText.includes(search);
 
-  menuBtn.addEventListener('click', () => {
-
-    const isOpen = mobileNav.classList.toggle('active');
-
-    menuBtn.classList.toggle('active', isOpen);
-
-    menuBtn.setAttribute(
-      'aria-expanded',
-      String(isOpen)
-    );
-
-    document.body.classList.toggle(
-      'menu-open',
-      isOpen
-    );
-
-  });
-
-  $$('.mobile-nav a', mobileNav).forEach(link => {
-
-    link.addEventListener('click', () => {
-
-      mobileNav.classList.remove('active');
-      menuBtn.classList.remove('active');
-
-      menuBtn.setAttribute(
-        'aria-expanded',
-        'false'
-      );
-
-      document.body.classList.remove('menu-open');
-
-    });
-
-  });
-
-}
+    })
+    .slice(0, 5);
 
 
-/* =========================================================
-   NAVEGAÇÃO POR ÂNCORAS
-   ========================================================= */
+  if (results.length === 0) {
 
-$$('a[href^="#"]').forEach(link => {
+    target.innerHTML = `
+      <div style="
+        padding:14px;
+        color:#89919b;
+        font-size:11px;
+      ">
+        Nenhum produto encontrado.
+      </div>
+    `;
 
-  link.addEventListener('click', event => {
-
-    const targetId = link.getAttribute('href');
-
-    if (!targetId || targetId === '#') {
-      return;
-    }
-
-    const target = $(targetId);
-
-    if (!target) {
-      return;
-    }
-
-    event.preventDefault();
-
-    const headerHeight = siteHeader
-      ? siteHeader.offsetHeight
-      : 0;
-
-    const targetPosition =
-      target.getBoundingClientRect().top +
-      window.scrollY -
-      headerHeight;
-
-    window.scrollTo({
-      top: targetPosition,
-      behavior: 'smooth'
-    });
-
-  });
-
-});
+    return;
+  }
 
 
-/* =========================================================
-   ANIMAÇÕES AO ENTRAR NA TELA
-   ========================================================= */
+  target.innerHTML = results
+    .map(product => {
 
-const revealElements = $$(
-  '.reveal, .fade-in, .animate-on-scroll'
-);
+      return `
+        <button
+          class="search-result"
+          data-search-product="${product.id}"
+        >
 
-if (
-  revealElements.length &&
-  'IntersectionObserver' in window
-) {
+          <img
+            src="${product.image}"
+            alt="${product.name}"
+          >
 
-  const revealObserver = new IntersectionObserver(
-    entries => {
+          <span>
 
-      entries.forEach(entry => {
+            <b>
+              ${product.name}
+            </b>
 
-        if (!entry.isIntersecting) {
-          return;
-        }
+            <small>
+              ${product.category}
+              ·
+              ${money(product.price)}
+            </small>
 
-        entry.target.classList.add('visible');
+          </span>
 
-        revealObserver.unobserve(entry.target);
+        </button>
+      `;
 
-      });
-
-    },
-    {
-      threshold: 0.12
-    }
-  );
-
-  revealElements.forEach(element => {
-    revealObserver.observe(element);
-  });
-
-} else {
-
-  revealElements.forEach(element => {
-    element.classList.add('visible');
-  });
+    })
+    .join("");
 
 }
 
 
 /* =========================================================
-   CARROSSÉIS
+   CARROSSEL
    ========================================================= */
 
-function setupCarousel(
+function scrollCarousel(
   carouselId,
-  previousSelector,
-  nextSelector
+  direction
 ) {
 
-  const carousel = $(`#${carouselId}`);
+  const carousel =
+    document.getElementById(carouselId);
 
   if (!carousel) {
     return;
   }
 
-  const previousButton = $(
-    `${previousSelector}[data-carousel="${carouselId === 'featuredCarousel'
-      ? 'featured'
-      : carouselId === 'customCarousel'
-        ? 'custom'
-        : 'cards'
-    }"]`
-  );
+  carousel.scrollBy({
+    left:
+      direction *
+      carousel.clientWidth *
+      0.82,
 
-  const nextButton = $(
-    `${nextSelector}[data-carousel="${carouselId === 'featuredCarousel'
-      ? 'featured'
-      : carouselId === 'customCarousel'
-        ? 'custom'
-        : 'cards'
-    }"]`
-  );
-
-  function getScrollAmount() {
-
-    const card = $('.product-card', carousel);
-
-    if (!card) {
-      return carousel.clientWidth;
-    }
-
-    const styles = window.getComputedStyle(carousel);
-
-    const gap =
-      parseFloat(styles.columnGap) ||
-      parseFloat(styles.gap) ||
-      16;
-
-    return card.getBoundingClientRect().width + gap;
-
-  }
-
-  if (previousButton) {
-
-    previousButton.addEventListener('click', () => {
-
-      carousel.scrollBy({
-        left: -getScrollAmount(),
-        behavior: 'smooth'
-      });
-
-    });
-
-  }
-
-  if (nextButton) {
-
-    nextButton.addEventListener('click', () => {
-
-      carousel.scrollBy({
-        left: getScrollAmount(),
-        behavior: 'smooth'
-      });
-
-    });
-
-  }
+    behavior: "smooth"
+  });
 
 }
 
 
-/*
- * Os IDs abaixo correspondem aos carrosséis existentes
- * no HTML.
- */
-
-setupCarousel(
-  'featuredCarousel',
-  '[data-dir="-1"]',
-  '[data-dir="1"]'
-);
-
-setupCarousel(
-  'customCarousel',
-  '[data-dir="-1"]',
-  '[data-dir="1"]'
-);
-
-setupCarousel(
-  'cardsCarousel',
-  '[data-dir="-1"]',
-  '[data-dir="1"]'
-);
-
-
 /* =========================================================
-   ARRASTAR CARROSSÉIS COM O MOUSE
+   EVENTOS DOS PRODUTOS
    ========================================================= */
 
-$$('.product-carousel').forEach(carousel => {
+document.addEventListener(
+  "click",
+  event => {
 
-  let isDown = false;
-  let startX = 0;
-  let scrollLeft = 0;
+    const carouselButton =
+      event.target.closest(
+        "[data-carousel]"
+      );
 
-  carousel.addEventListener(
-    'mousedown',
-    event => {
-
-      isDown = true;
-
-      carousel.classList.add('dragging');
-
-      startX = event.pageX -
-        carousel.getBoundingClientRect().left;
-
-      scrollLeft = carousel.scrollLeft;
-
+    if (!carouselButton) {
+      return;
     }
-  );
 
-  carousel.addEventListener(
-    'mouseleave',
-    () => {
+    const carouselName =
+      carouselButton.dataset.carousel;
 
-      isDown = false;
-
-      carousel.classList.remove('dragging');
-
-    }
-  );
-
-  carousel.addEventListener(
-    'mouseup',
-    () => {
-
-      isDown = false;
-
-      carousel.classList.remove('dragging');
-
-    }
-  );
-
-  carousel.addEventListener(
-    'mousemove',
-    event => {
-
-      if (!isDown) {
-        return;
-      }
-
-      event.preventDefault();
-
-      const x =
-        event.pageX -
-        carousel.getBoundingClientRect().left;
-
-      const distance = (x - startX) * 1.5;
-
-      carousel.scrollLeft =
-        scrollLeft - distance;
-
-    }
-  );
-
-});
-
-
-/* =========================================================
-   PRODUTOS
-   ========================================================= */
-
-function getProducts() {
-
-  return $$('.product-card').map((card, index) => {
-
-    const nameElement =
-      $('.product-name', card) ||
-      $('.product-title', card) ||
-      $('h3', card) ||
-      $('h4', card);
-
-    const priceElement =
-      $('.product-price', card) ||
-      $('.price', card);
-
-    const categoryElement =
-      $('.product-category', card) ||
-      $('.category', card);
-
-    const image =
-      $('img', card);
-
-    const name =
-      nameElement
-        ? nameElement.textContent.trim()
-        : `Produto ${index + 1}`;
-
-    const priceText =
-      priceElement
-        ? priceElement.textContent.trim()
-        : '';
-
-    const category =
-      categoryElement
-        ? categoryElement.textContent.trim()
-        : '';
-
-    const price =
+    const direction =
       Number(
-        priceText
-          .replace(/[^\d,.-]/g, '')
-          .replace(/\./g, '')
-          .replace(',', '.')
-      ) || 0;
-
-    return {
-      id:
-        card.dataset.id ||
-        String(index + 1),
-
-      name,
-
-      category,
-
-      price,
-
-      image:
-        image
-          ? image.getAttribute('src')
-          : '',
-
-      element: card
-    };
-
-  });
-
-}
-
-
-/* =========================================================
-   FAVORITOS
-   ========================================================= */
-
-let favorites =
-  storage.get('godprint-favorites', []);
-
-if (!Array.isArray(favorites)) {
-  favorites = [];
-}
-
-
-function saveFavorites() {
-
-  storage.set(
-    'godprint-favorites',
-    favorites
-  );
-
-}
-
-
-function isFavorite(id) {
-
-  return favorites.includes(String(id));
-
-}
-
-
-function toggleFavorite(id) {
-
-  id = String(id);
-
-  if (isFavorite(id)) {
-
-    favorites =
-      favorites.filter(
-        favoriteId => favoriteId !== id
+        carouselButton.dataset.dir
       );
 
-    showToast('Removido dos favoritos');
+    let carouselId;
 
-  } else {
-
-    favorites.push(id);
-
-    showToast('Adicionado aos favoritos');
-
-  }
-
-  saveFavorites();
-
-  updateFavoriteButtons();
-
-  renderFavorites();
-
-}
-
-
-function updateFavoriteButtons() {
-
-  $$('.product-card').forEach(card => {
-
-    const id =
-      card.dataset.id;
-
-    if (!id) {
-      return;
+    if (carouselName === "featured") {
+      carouselId = "featuredCarousel";
     }
 
-    const button =
-      $('.favorite', card) ||
-      $('.favorite-btn', card) ||
-      $('[data-favorite]', card);
-
-    if (!button) {
-      return;
+    if (carouselName === "custom") {
+      carouselId = "customCarousel";
     }
 
-    const active =
-      isFavorite(id);
+    if (carouselName === "cards") {
+      carouselId = "cardsCarousel";
+    }
 
-    button.classList.toggle(
-      'active',
-      active
-    );
-
-    button.classList.toggle(
-      'is-favorite',
-      active
-    );
-
-    button.setAttribute(
-      'aria-pressed',
-      String(active)
-    );
-
-  });
-
-}
-
-
-document.addEventListener(
-  'click',
-  event => {
-
-    const button =
-      event.target.closest(
-        '.favorite, .favorite-btn, [data-favorite]'
+    if (carouselId) {
+      scrollCarousel(
+        carouselId,
+        direction
       );
-
-    if (!button) {
-      return;
     }
-
-    const card =
-      button.closest('.product-card');
-
-    if (!card) {
-      return;
-    }
-
-    const id =
-      card.dataset.id;
-
-    if (!id) {
-      return;
-    }
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    toggleFavorite(id);
-
   }
 );
 
 
 /* =========================================================
-   PAINEL DE FAVORITOS
+   BUSCA MOBILE
    ========================================================= */
 
-const favoritesPanel =
-  $('#favoritesPanel');
+$("#openSearch")?.addEventListener(
+  "click",
+  () => {
 
-const closeFavorites =
-  $('#closeFavorites');
+    const searchScreen =
+      $("#searchScreen");
 
-const favoriteItems =
-  $('#favoriteItems');
+    const input =
+      $("#mobileSearchInput");
 
-function openFavoritesPanel() {
-
-  if (!favoritesPanel) {
-    return;
-  }
-
-  favoritesPanel.classList.add('active');
-
-  document.body.classList.add(
-    'drawer-open'
-  );
-
-  updateBackdrop();
-
-}
-
-
-function closeFavoritesPanel() {
-
-  if (!favoritesPanel) {
-    return;
-  }
-
-  favoritesPanel.classList.remove(
-    'active'
-  );
-
-  document.body.classList.remove(
-    'drawer-open'
-  );
-
-  updateBackdrop();
-
-}
-
-
-if (closeFavorites) {
-
-  closeFavorites.addEventListener(
-    'click',
-    closeFavoritesPanel
-  );
-
-}
-
-
-function renderFavorites() {
-
-  if (!favoriteItems) {
-    return;
-  }
-
-  const products =
-    getProducts();
-
-  const favoriteProducts =
-    products.filter(product =>
-      isFavorite(product.id)
-    );
-
-  favoriteItems.innerHTML = '';
-
-  if (!favoriteProducts.length) {
-
-    favoriteItems.innerHTML = `
-      <div class="empty-state">
-        <p>Você ainda não possui favoritos.</p>
-      </div>
-    `;
-
-    return;
-  }
-
-  favoriteProducts.forEach(product => {
-
-    const item =
-      document.createElement('div');
-
-    item.className =
-      'favorite-item';
-
-    item.innerHTML = `
-      <div class="favorite-item-image">
-        ${product.image
-          ? `<img src="${product.image}" alt="${product.name}">`
-          : ''
-        }
-      </div>
-
-      <div class="favorite-item-info">
-        <strong>${product.name}</strong>
-        <span>${formatMoney(product.price)}</span>
-      </div>
-
-      <button
-        type="button"
-        class="favorite-remove"
-        data-remove-favorite="${product.id}"
-        aria-label="Remover dos favoritos"
-      >
-        ×
-      </button>
-    `;
-
-    favoriteItems.appendChild(item);
-
-  });
-
-}
-
-
-document.addEventListener(
-  'click',
-  event => {
-
-    const button =
-      event.target.closest(
-        '[data-remove-favorite]'
-      );
-
-    if (!button) {
+    if (!searchScreen) {
       return;
     }
 
-    const id =
-      button.dataset.removeFavorite;
+    searchScreen.classList.add(
+      "open"
+    );
 
-    favorites =
-      favorites.filter(
-        favoriteId =>
-          String(favoriteId) !== String(id)
-      );
+    searchScreen.setAttribute(
+      "aria-hidden",
+      "false"
+    );
 
-    saveFavorites();
-
-    updateFavoriteButtons();
-
-    renderFavorites();
-
-    showToast(
-      'Removido dos favoritos'
+    setTimeout(
+      () => input?.focus(),
+      200
     );
 
   }
 );
 
 
-/* =========================================================
-   CARRINHO
-   ========================================================= */
+$("#closeSearch")?.addEventListener(
+  "click",
+  () => {
 
-let cart =
-  storage.get('godprint-cart', []);
+    const searchScreen =
+      $("#searchScreen");
 
-if (!Array.isArray(cart)) {
-  cart = [];
-}
-
-
-function saveCart() {
-
-  storage.set(
-    'godprint-cart',
-    cart
-  );
-
-}
-
-
-function addToCart(product) {
-
-  const existing =
-    cart.find(
-      item =>
-        String(item.id) ===
-        String(product.id)
+    searchScreen?.classList.remove(
+      "open"
     );
 
-  if (existing) {
-
-    existing.quantity += 1;
-
-  } else {
-
-    cart.push({
-      id: String(product.id),
-      name: product.name,
-      price: product.price,
-      image: product.image,
-      quantity: 1
-    });
-
-  }
-
-  saveCart();
-
-  renderCart();
-
-  openCart();
-
-  showToast(
-    'Produto adicionado ao carrinho'
-  );
-
-}
-
-
-function removeFromCart(id) {
-
-  cart =
-    cart.filter(
-      item =>
-        String(item.id) !==
-        String(id)
+    searchScreen?.setAttribute(
+      "aria-hidden",
+      "true"
     );
-
-  saveCart();
-
-  renderCart();
-
-}
-
-
-function changeQuantity(id, amount) {
-
-  const item =
-    cart.find(
-      product =>
-        String(product.id) ===
-        String(id)
-    );
-
-  if (!item) {
-    return;
-  }
-
-  item.quantity += amount;
-
-  if (item.quantity <= 0) {
-
-    removeFromCart(id);
-
-    return;
-
-  }
-
-  saveCart();
-
-  renderCart();
-
-}
-
-
-function getCartSubtotal() {
-
-  return cart.reduce(
-    (total, item) =>
-      total +
-      (Number(item.price) || 0) *
-      (Number(item.quantity) || 0),
-    0
-  );
-
-}
-
-
-function renderCart() {
-
-  const cartItems =
-    $('#cartItems');
-
-  const cartEmpty =
-    $('#cartEmpty');
-
-  const cartSubtotal =
-    $('#cartSubtotal');
-
-  const cartTotal =
-    $('#cartTotal');
-
-  if (cartItems) {
-
-    cartItems.innerHTML = '';
-
-    cart.forEach(item => {
-
-      const element =
-        document.createElement('div');
-
-      element.className =
-        'cart-item';
-
-      element.innerHTML = `
-        <div class="cart-item-image">
-          ${item.image
-            ? `<img src="${item.image}" alt="${item.name}">`
-            : ''
-          }
-        </div>
-
-        <div class="cart-item-info">
-
-          <strong>
-            ${item.name}
-          </strong>
-
-          <span>
-            ${formatMoney(item.price)}
-          </span>
-
-          <div class="cart-item-quantity">
-
-            <button
-              type="button"
-              data-cart-minus="${item.id}"
-              aria-label="Diminuir quantidade"
-            >
-              −
-            </button>
-
-            <span>
-              ${item.quantity}
-            </span>
-
-            <button
-              type="button"
-              data-cart-plus="${item.id}"
-              aria-label="Aumentar quantidade"
-            >
-              +
-            </button>
-
-          </div>
-
-        </div>
-
-        <button
-          type="button"
-          class="cart-remove"
-          data-cart-remove="${item.id}"
-          aria-label="Remover produto"
-        >
-          ×
-        </button>
-      `;
-
-      cartItems.appendChild(element);
-
-    });
-
-  }
-
-  const subtotal =
-    getCartSubtotal();
-
-  if (cartSubtotal) {
-
-    cartSubtotal.textContent =
-      formatMoney(subtotal);
-
-  }
-
-  if (cartTotal) {
-
-    cartTotal.textContent =
-      formatMoney(subtotal);
-
-  }
-
-  if (cartEmpty) {
-
-    cartEmpty.style.display =
-      cart.length
-        ? 'none'
-        : '';
-
-  }
-
-  updateCartCount();
-
-}
-
-
-function updateCartCount() {
-
-  const count =
-    cart.reduce(
-      (total, item) =>
-        total +
-        Number(item.quantity || 0),
-      0
-    );
-
-  $$(
-    '[data-cart-count], .cart-count'
-  ).forEach(element => {
-
-    element.textContent =
-      count;
-
-    element.classList.toggle(
-      'has-items',
-      count > 0
-    );
-
-  });
-
-}
-
-
-document.addEventListener(
-  'click',
-  event => {
-
-    const addButton =
-      event.target.closest(
-        '.product-add, [data-add-cart], .add-to-cart'
-      );
-
-    if (addButton) {
-
-      const card =
-        addButton.closest(
-          '.product-card'
-        );
-
-      if (card) {
-
-        const product =
-          getProducts().find(
-            item =>
-              String(item.id) ===
-              String(card.dataset.id)
-          );
-
-        if (product) {
-
-          event.preventDefault();
-
-          addToCart(product);
-
-          return;
-
-        }
-
-      }
-
-    }
-
-
-    const plus =
-      event.target.closest(
-        '[data-cart-plus]'
-      );
-
-    if (plus) {
-
-      changeQuantity(
-        plus.dataset.cartPlus,
-        1
-      );
-
-      return;
-
-    }
-
-
-    const minus =
-      event.target.closest(
-        '[data-cart-minus]'
-      );
-
-    if (minus) {
-
-      changeQuantity(
-        minus.dataset.cartMinus,
-        -1
-      );
-
-      return;
-
-    }
-
-
-    const remove =
-      event.target.closest(
-        '[data-cart-remove]'
-      );
-
-    if (remove) {
-
-      removeFromCart(
-        remove.dataset.cartRemove
-      );
-
-    }
 
   }
 );
-
-
-/* =========================================================
-   ABRIR / FECHAR CARRINHO
-   ========================================================= */
-
-const cartDrawer =
-  $('#cartDrawer');
-
-function openCart() {
-
-  if (!cartDrawer) {
-    return;
-  }
-
-  cartDrawer.classList.add(
-    'active'
-  );
-
-  document.body.classList.add(
-    'drawer-open'
-  );
-
-  updateBackdrop();
-
-}
-
-
-function closeCart() {
-
-  if (!cartDrawer) {
-    return;
-  }
-
-  cartDrawer.classList.remove(
-    'active'
-  );
-
-  document.body.classList.remove(
-    'drawer-open'
-  );
-
-  updateBackdrop();
-
-}
-
-
-document.addEventListener(
-  'click',
-  event => {
-
-    const button =
-      event.target.closest(
-        '[data-cart-open], #cartButton, .cart-button'
-      );
-
-    if (button) {
-
-      event.preventDefault();
-
-      openCart();
-
-    }
-
-  }
-);
-
-
-$$(
-  '[data-cart-close], #closeCart, .cart-close'
-).forEach(button => {
-
-  button.addEventListener(
-    'click',
-    closeCart
-  );
-
-});
-
-
-/* =========================================================
-   BACKDROP
-   ========================================================= */
-
-const drawerBackdrop =
-  $('#drawerBackdrop');
-
-
-function updateBackdrop() {
-
-  if (!drawerBackdrop) {
-    return;
-  }
-
-  const cartIsOpen =
-    cartDrawer &&
-    cartDrawer.classList.contains('active');
-
-  const favoritesAreOpen =
-    favoritesPanel &&
-    favoritesPanel.classList.contains('active');
-
-  drawerBackdrop.classList.toggle(
-    'active',
-    Boolean(
-      cartIsOpen ||
-      favoritesAreOpen
-    )
-  );
-
-}
-
-
-if (drawerBackdrop) {
-
-  drawerBackdrop.addEventListener(
-    'click',
-    () => {
-
-      closeCart();
-
-      closeFavoritesPanel();
-
-    }
-  );
-
-}
 
 
 /* =========================================================
    BUSCA DESKTOP
    ========================================================= */
 
-const searchInput =
-  $('#searchInput');
-
-const searchResults =
-  $('#searchResults');
-
-
-function searchProducts(term) {
-
-  const normalized =
-    String(term || '')
-      .trim()
-      .toLowerCase();
-
-  const products =
-    getProducts();
-
-  if (!normalized) {
-    return [];
-  }
-
-  return products.filter(product => {
-
-    return (
-      product.name
-        .toLowerCase()
-        .includes(normalized)
-      ||
-      product.category
-        .toLowerCase()
-        .includes(normalized)
-    );
-
-  });
-
-}
-
-
-function renderSearchResults(
-  term,
-  container
-) {
-
-  if (!container) {
-    return;
-  }
-
-  container.innerHTML = '';
-
-  const normalized =
-    String(term || '').trim();
-
-  if (!normalized) {
-    container.classList.remove(
-      'active'
-    );
-
-    return;
-  }
-
-  const results =
-    searchProducts(normalized);
-
-  if (!results.length) {
-
-    container.innerHTML = `
-      <div class="search-empty">
-        Nenhum produto encontrado.
-      </div>
-    `;
-
-  } else {
-
-    results.forEach(product => {
-
-      const item =
-        document.createElement('button');
-
-      item.type = 'button';
-
-      item.className =
-        'search-result-item';
-
-      item.dataset.productId =
-        product.id;
-
-      item.innerHTML = `
-        <div class="search-result-image">
-          ${product.image
-            ? `<img src="${product.image}" alt="${product.name}">`
-            : ''
-          }
-        </div>
-
-        <div class="search-result-info">
-          <strong>${product.name}</strong>
-          <span>${formatMoney(product.price)}</span>
-        </div>
-      `;
-
-      container.appendChild(item);
-
-    });
-
-  }
-
-  container.classList.add(
-    'active'
-  );
-
-}
-
-
-if (searchInput) {
-
-  searchInput.addEventListener(
-    'input',
-    () => {
-
-      renderSearchResults(
-        searchInput.value,
-        searchResults
-      );
-
-    }
-  );
-
-}
-
-
-document.addEventListener(
-  'click',
+$("#searchInput")?.addEventListener(
+  "input",
   event => {
 
-    const result =
-      event.target.closest(
-        '.search-result-item'
-      );
+    const value =
+      event.target.value;
 
-    if (!result) {
+    const dropdown =
+      $("#searchDropdown");
+
+    if (!dropdown) {
       return;
     }
 
-    const id =
-      result.dataset.productId;
+    searchProducts(
+      value,
+      dropdown
+    );
 
-    const card =
-      $(
-        `.product-card[data-id="${CSS.escape(id)}"]`
-      );
-
-    if (card) {
-
-      card.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-      });
-
-    }
-
-    if (searchInput) {
-      searchInput.value = '';
-    }
-
-    if (searchResults) {
-      searchResults.classList.remove(
-        'active'
-      );
-    }
+    dropdown.classList.toggle(
+      "open",
+      Boolean(value.trim())
+    );
 
   }
 );
@@ -1434,53 +477,13 @@ document.addEventListener(
    BUSCA MOBILE
    ========================================================= */
 
-const mobileSearchInput =
-  $('#mobileSearchInput');
-
-const mobileSearchResults =
-  $('#mobileSearchResults');
-
-
-if (mobileSearchInput) {
-
-  mobileSearchInput.addEventListener(
-    'input',
-    () => {
-
-      renderSearchResults(
-        mobileSearchInput.value,
-        mobileSearchResults
-      );
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   FECHAR RESULTADOS DE BUSCA
-   ========================================================= */
-
-document.addEventListener(
-  'click',
+$("#mobileSearchInput")?.addEventListener(
+  "input",
   event => {
 
-    const clickedSearch =
-      event.target.closest(
-        '.search-box, .search-container, .mobile-search'
-      );
-
-    if (clickedSearch) {
-      return;
-    }
-
-    $$('.search-results').forEach(
-      results => {
-        results.classList.remove(
-          'active'
-        );
-      }
+    searchProducts(
+      event.target.value,
+      $("#mobileSearchResults")
     );
 
   }
@@ -1488,333 +491,143 @@ document.addEventListener(
 
 
 /* =========================================================
-   CATEGORIAS
+   BOTÃO DE PESQUISA
    ========================================================= */
 
-const categoryGrid =
-  $('#categoryGrid');
+$("#searchSubmit")?.addEventListener(
+  "click",
+  () => {
 
+    const input =
+      $("#searchInput");
 
-if (categoryGrid) {
+    if (!input) {
+      return;
+    }
 
-  categoryGrid.addEventListener(
-    'click',
-    event => {
+    if (input.value.trim()) {
 
-      const categoryCard =
-        event.target.closest(
-          '.category-card'
-        );
+      $("#produtos")
+        ?.scrollIntoView({
+          behavior: "smooth"
+        });
 
-      if (!categoryCard) {
-        return;
-      }
-
-      const category =
-        categoryCard.dataset.category;
-
-      if (!category) {
-        return;
-      }
-
-      const products =
-        $$('.product-card');
-
-      let found = false;
-
-      products.forEach(card => {
-
-        const cardCategory =
-          card.dataset.category;
-
-        if (
-          cardCategory &&
-          cardCategory
-            .toLowerCase() ===
-          category.toLowerCase()
-        ) {
-
-          if (!found) {
-
-            card.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center'
-            });
-
-            found = true;
-
-          }
-
-        }
-
-      });
+      $("#searchDropdown")
+        ?.classList.remove("open");
 
     }
-  );
 
-}
-
-
-/* =========================================================
-   FILTRO DE PRODUTOS
-   ========================================================= */
-
-function filterProducts(category) {
-
-  const normalized =
-    String(category || '')
-      .trim()
-      .toLowerCase();
-
-  $$('.product-card').forEach(card => {
-
-    const cardCategory =
-      String(
-        card.dataset.category || ''
-      ).toLowerCase();
-
-    const show =
-      !normalized ||
-      normalized === 'todos' ||
-      cardCategory === normalized;
-
-    card.style.display =
-      show ? '' : 'none';
-
-  });
-
-}
-
-
-/* =========================================================
-   BOTÕES DE CATEGORIA
-   ========================================================= */
-
-$$(
-  '[data-category-filter]'
-).forEach(button => {
-
-  button.addEventListener(
-    'click',
-    () => {
-
-      const category =
-        button.dataset.categoryFilter;
-
-      filterProducts(category);
-
-      $$(
-        '[data-category-filter]'
-      ).forEach(item => {
-
-        item.classList.remove(
-          'active'
-        );
-
-      });
-
-      button.classList.add(
-        'active'
-      );
-
-    }
-  );
-
-});
-
-
-/* =========================================================
-   WHATSAPP
-   ========================================================= */
-
-$$(
-  '[data-whatsapp], .whatsapp-button, .floating-whatsapp'
-).forEach(button => {
-
-  button.addEventListener(
-    'click',
-    () => {
-
-      showToast(
-        'Abrindo atendimento pelo WhatsApp...'
-      );
-
-    }
-  );
-
-});
-
-
-/* =========================================================
-   BOTÃO VOLTAR AO TOPO
-   ========================================================= */
-
-const backTop =
-  $('#backTop');
-
-
-function updateBackTop() {
-
-  if (!backTop) {
-    return;
   }
+);
 
-  backTop.classList.toggle(
-    'visible',
-    window.scrollY > 500
-  );
 
-}
-
+/* =========================================================
+   HEADER AO ROLAR
+   ========================================================= */
 
 window.addEventListener(
-  'scroll',
-  updateBackTop,
+  "scroll",
+  () => {
+
+    const header =
+      $("#siteHeader");
+
+    const backTop =
+      $("#backTop");
+
+    if (header) {
+
+      header.classList.toggle(
+        "scrolled",
+        window.scrollY > 20
+      );
+
+    }
+
+    if (backTop) {
+
+      backTop.classList.toggle(
+        "show",
+        window.scrollY > 500
+      );
+
+    }
+
+  },
   {
     passive: true
   }
 );
 
-updateBackTop();
 
+/* =========================================================
+   VOLTAR AO TOPO
+   ========================================================= */
 
-if (backTop) {
+$("#backTop")?.addEventListener(
+  "click",
+  () => {
 
-  backTop.addEventListener(
-    'click',
-    () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
 
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-
-    }
-  );
-
-}
+  }
+);
 
 
 /* =========================================================
-   TOAST
+   INTERSECTION OBSERVER
    ========================================================= */
 
-const toast =
-  $('#toast');
+const revealObserver =
+  new IntersectionObserver(
+    entries => {
 
-let toastTimer = null;
+      entries.forEach(
+        entry => {
 
+          if (
+            entry.isIntersecting
+          ) {
 
-function showToast(message) {
+            entry.target.classList.add(
+              "visible"
+            );
 
-  if (!toast) {
-    return;
-  }
+            revealObserver.unobserve(
+              entry.target
+            );
 
-  const messageElement =
-    $('.toast-message', toast);
+          }
 
-  if (messageElement) {
-
-    messageElement.textContent =
-      message;
-
-  } else {
-
-    toast.textContent =
-      message;
-
-  }
-
-  toast.classList.add(
-    'active'
-  );
-
-  clearTimeout(
-    toastTimer
-  );
-
-  toastTimer = setTimeout(
-    () => {
-
-      toast.classList.remove(
-        'active'
+        }
       );
 
     },
-    2500
+    {
+      threshold: 0.12
+    }
   );
 
-}
 
+function observeReveals() {
 
-/* =========================================================
-   CONTA
-   ========================================================= */
-
-$$(
-  '[data-account], #accountButton, .account-button'
-).forEach(button => {
-
-  button.addEventListener(
-    'click',
-    event => {
-
-      /*
-       * Não força uma página inexistente.
-       * Caso o HTML tenha um link real,
-       * ele continuará funcionando normalmente.
-       */
+  $$(".reveal").forEach(
+    element => {
 
       if (
-        button.tagName.toLowerCase() ===
-        'a'
+        !element.classList.contains(
+          "visible"
+        )
       ) {
-        return;
-      }
 
-      event.preventDefault();
-
-      showToast(
-        'Área da conta em breve.'
-      );
-
-    }
-  );
-
-});
-
-
-/* =========================================================
-   CHECKOUT
-   ========================================================= */
-
-const checkoutBtn =
-  $('#checkoutBtn');
-
-
-if (checkoutBtn) {
-
-  checkoutBtn.addEventListener(
-    'click',
-    event => {
-
-      if (!cart.length) {
-
-        event.preventDefault();
-
-        showToast(
-          'Seu carrinho está vazio.'
+        revealObserver.observe(
+          element
         );
 
-        return;
-
       }
-
-      /*
-       * O botão continua respeitando o
-       * comportamento definido no HTML.
-       */
 
     }
   );
@@ -1823,71 +636,195 @@ if (checkoutBtn) {
 
 
 /* =========================================================
-   ESC — FECHAR PAINÉIS
+   RENDERIZAÇÃO INICIAL
+   ========================================================= */
+
+observeReveals();
+
+
+/* =========================================================
+   LOADING SCREEN
+   ========================================================= */
+
+function hideLoader() {
+
+  const loader =
+    $("#loader");
+
+  if (!loader) {
+    return;
+  }
+
+  loader.classList.add(
+    "is-done"
+  );
+
+}
+
+
+/*
+  Espera o carregamento completo
+  da página.
+*/
+
+window.addEventListener(
+  "load",
+  () => {
+
+    setTimeout(
+      hideLoader,
+      450
+    );
+
+  }
+);
+
+
+/*
+  Segurança:
+  caso alguma imagem externa
+  demore demais, o loading
+  nunca ficará preso.
+*/
+
+setTimeout(
+  hideLoader,
+  3500
+);
+
+
+/* =========================================================
+   FECHAR DROPDOWN DE BUSCA AO CLICAR FORA
    ========================================================= */
 
 document.addEventListener(
-  'keydown',
+  "click",
   event => {
 
-    if (event.key !== 'Escape') {
+    const searchWrap =
+      $("#desktopSearch");
+
+    const dropdown =
+      $("#searchDropdown");
+
+    if (
+      searchWrap &&
+      dropdown &&
+      !searchWrap.contains(event.target)
+    ) {
+
+      dropdown.classList.remove(
+        "open"
+      );
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   TECLA ESC
+   ========================================================= */
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (event.key !== "Escape") {
       return;
     }
 
-    closeCart();
 
-    closeFavoritesPanel();
+    $("#searchScreen")
+      ?.classList.remove("open");
 
-    if (mobileNav) {
+    $("#searchDropdown")
+      ?.classList.remove("open");
 
-      mobileNav.classList.remove(
-        'active'
-      );
+    $("#menuBtn")
+      ?.classList.remove("open");
 
-    }
-
-    if (menuBtn) {
-
-      menuBtn.classList.remove(
-        'active'
-      );
-
-      menuBtn.setAttribute(
-        'aria-expanded',
-        'false'
-      );
-
-    }
-
-    document.body.classList.remove(
-      'menu-open'
-    );
+    $("#mobileNav")
+      ?.classList.remove("open");
 
   }
 );
 
 
 /* =========================================================
-   REDIMENSIONAMENTO DA JANELA
+   SUPORTE A ARRASTAR CARROSSÉIS COM MOUSE
    ========================================================= */
 
-let resizeTimer;
+$$(".product-carousel").forEach(
+  carousel => {
 
-window.addEventListener(
-  'resize',
-  () => {
+    let isDragging = false;
+    let startX = 0;
+    let startScroll = 0;
 
-    clearTimeout(resizeTimer);
 
-    resizeTimer = setTimeout(
+    carousel.addEventListener(
+      "mousedown",
+      event => {
+
+        isDragging = true;
+
+        startX = event.pageX;
+
+        startScroll =
+          carousel.scrollLeft;
+
+        carousel.style.cursor =
+          "grabbing";
+
+      }
+    );
+
+
+    carousel.addEventListener(
+      "mouseleave",
       () => {
 
-        updateHeader();
+        isDragging = false;
 
-        updateBackTop();
+        carousel.style.cursor =
+          "";
 
-      },
-      150
+      }
+    );
+
+
+    carousel.addEventListener(
+      "mouseup",
+      () => {
+
+        isDragging = false;
+
+        carousel.style.cursor =
+          "";
+
+      }
+    );
+
+
+    carousel.addEventListener(
+      "mousemove",
+      event => {
+
+        if (!isDragging) {
+          return;
+        }
+
+        event.preventDefault();
+
+        const distance =
+          event.pageX - startX;
+
+        carousel.scrollLeft =
+          startScroll - distance;
+
+      }
     );
 
   }
@@ -1895,24 +832,107 @@ window.addEventListener(
 
 
 /* =========================================================
-   INICIALIZAÇÃO
+   AUTOPLAY SUAVE DO CARROSSEL PRINCIPAL
    ========================================================= */
 
-document.addEventListener(
-  'DOMContentLoaded',
-  () => {
+let autoplayTimer;
 
-    updateFavoriteButtons();
 
-    renderFavorites();
+function startFeaturedAutoplay() {
 
-    renderCart();
+  const carousel =
+    $("#featuredCarousel");
 
-    updateCartCount();
+  if (!carousel) {
+    return;
+  }
 
-    updateHeader();
+  autoplayTimer =
+    setInterval(
+      () => {
 
-    updateBackTop();
+        /*
+          Não avança quando a página
+          não está visível.
+        */
+
+        if (
+          document.hidden
+        ) {
+          return;
+        }
+
+
+        const maxScroll =
+          carousel.scrollWidth -
+          carousel.clientWidth;
+
+
+        if (
+          carousel.scrollLeft >=
+          maxScroll - 20
+        ) {
+
+          carousel.scrollTo({
+            left: 0,
+            behavior: "smooth"
+          });
+
+        } else {
+
+          carousel.scrollBy({
+            left:
+              carousel.clientWidth *
+              0.82,
+
+            behavior: "smooth"
+          });
+
+        }
+
+      },
+      5000
+    );
+
+}
+
+
+function stopFeaturedAutoplay() {
+
+  if (autoplayTimer) {
+
+    clearInterval(
+      autoplayTimer
+    );
 
   }
+
+}
+
+
+const featuredCarousel =
+  $("#featuredCarousel");
+
+
+featuredCarousel?.addEventListener(
+  "mouseenter",
+  stopFeaturedAutoplay
+);
+
+
+featuredCarousel?.addEventListener(
+  "mouseleave",
+  startFeaturedAutoplay
+);
+
+
+startFeaturedAutoplay();
+
+
+/* =========================================================
+   FINAL
+   ========================================================= */
+
+console.log(
+  "God Print — sistema carregado com sucesso."
 );

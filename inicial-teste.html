@@ -1,2606 +1,1386 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
+  <head>
     <!-- =====================================================
          CONFIGURAÇÕES BÁSICAS
          ===================================================== -->
 
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#111111" />
 
     <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+      name="description"
+      content="God Print — impressão profissional, personalizados e soluções gráficas para sua marca."
+    />
 
     <meta
-        name="theme-color"
-        content="#111111"
-    >
+      name="keywords"
+      content="God Print, impressão, personalizados, camisetas, banners, adesivos, cartões de visita, lonas, comunicação visual"
+    />
 
-    <meta
-        name="description"
-        content="God Print — impressão profissional, personalizados e soluções gráficas para sua marca."
-    >
-
-    <meta
-        name="keywords"
-        content="God Print, impressão, personalizados, camisetas, banners, adesivos, cartões de visita, lonas, comunicação visual"
-    >
-
-    <meta
-        name="author"
-        content="God Print"
-    >
-
+    <meta name="author" content="God Print" />
 
     <!-- =====================================================
          OPEN GRAPH
          ===================================================== -->
 
-    <meta
-        property="og:title"
-        content="God Print — Imprimindo sua ideia"
-    >
+    <meta property="og:title" content="God Print — Imprimindo sua ideia" />
 
     <meta
-        property="og:description"
-        content="Impressão profissional, personalizados e soluções gráficas para sua marca."
-    >
+      property="og:description"
+      content="Impressão profissional, personalizados e soluções gráficas para sua marca."
+    />
 
-    <meta
-        property="og:type"
-        content="website"
-    >
+    <meta property="og:type" content="website" />
 
-    <meta
-        property="og:locale"
-        content="pt_BR"
-    >
-
+    <meta property="og:locale" content="pt_BR" />
 
     <!-- =====================================================
          TÍTULO
          ===================================================== -->
 
-    <title>
-        God Print — Imprimindo sua ideia
-    </title>
-
+    <title>God Print — Imprimindo sua ideia</title>
 
     <!-- =====================================================
          FONTES
          ===================================================== -->
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- =====================================================
          CSS
          ===================================================== -->
 
-    <link
-        rel="stylesheet"
-        href="css/style.css"
-    >
-
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- =====================================================
          FAVICON
          ===================================================== -->
 
-    <link rel="icon" type="image/svg+xml" href="assets/logo-mobile.png">
+    <link rel="icon" type="image/svg+xml" href="assets/logo-mobile.png" />
+  </head>
 
-</head>
-
-
-<body>
-
-
+  <body>
     <!-- =====================================================
          LOADING SCREEN
          ===================================================== -->
 
-    <div
-        class="loader"
-        id="loader"
-        aria-label="Carregando God Print"
-    >
+    <div class="loader" id="loader" aria-label="Carregando God Print">
+      <div class="loader-content">
+        <img src="assets/logo.png" alt="God Print" class="loader-logo" />
 
-        <div class="loader-content">
-
-            <img
-                src="assets/logo.png"
-                alt="God Print"
-                class="loader-logo"
-            >
-
-            <div class="loader-line">
-
-                <span></span>
-
-            </div>
-
-            <p>
-                Imprimindo sua ideia...
-            </p>
-
+        <div class="loader-line">
+          <span></span>
         </div>
 
+        <p>Imprimindo sua ideia...</p>
+      </div>
     </div>
-
-
 
     <!-- =====================================================
          HEADER
          ===================================================== -->
 
-    <header
-        class="site-header"
-        id="siteHeader"
-    >
+    <header class="site-header" id="siteHeader">
+      <div class="container header-inner">
+        <!-- LOGO -->
 
-        <div class="container header-inner">
+        <a href="#inicio" class="logo" aria-label="God Print - início">
+          <img src="assets/logo.png" alt="God Print" />
+        </a>
 
-
-            <!-- LOGO -->
-
-            <a
-                href="#inicio"
-                class="logo"
-                aria-label="God Print - início"
-            >
-
-                <img
-                    src="assets/logo.png"
-                    alt="God Print"
-                >
-
-            </a>
-
-
-
-            <!-- =================================================
+        <!-- =================================================
                  NAVEGAÇÃO DESKTOP
                  ================================================= -->
 
-            <nav
-                class="desktop-nav"
-                aria-label="Navegação principal"
-            >
+        <nav class="desktop-nav" aria-label="Navegação principal">
+          <a href="#inicio" class="active"> Início </a>
 
-                <a
-                    href="#inicio"
-                    class="active"
-                >
-                    Início
-                </a>
+          <a href="#produtos"> Produtos </a>
 
-                <a href="#produtos">
-                    Produtos
-                </a>
+          <a href="#personalizados"> Personalizados </a>
 
-                <a href="#personalizados">
-                    Personalizados
-                </a>
+          <a href="#categorias"> Categorias </a>
 
-                <a href="#categorias">
-                    Categorias
-                </a>
+          <a href="#ofertas"> Ofertas </a>
+        </nav>
 
-                <a href="#ofertas">
-                    Ofertas
-                </a>
-
-            </nav>
-
-
-
-            <!-- =================================================
+        <!-- =================================================
                  BUSCA DESKTOP
                  ================================================= -->
 
-            <div
-                class="desktop-search"
-                id="desktopSearch"
-            >
+        <div class="desktop-search" id="desktopSearch">
+          <label for="searchInput" class="sr-only"> Pesquisar produtos </label>
 
-                <label
-                    for="searchInput"
-                    class="sr-only"
-                >
-                    Pesquisar produtos
-                </label>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="O que você procura?"
+            autocomplete="off"
+            aria-label="Pesquisar produtos"
+          />
 
-                <input
-                    type="search"
-                    id="searchInput"
-                    placeholder="O que você procura?"
-                    autocomplete="off"
-                    aria-label="Pesquisar produtos"
-                >
+          <button type="button" id="searchSubmit" aria-label="Pesquisar">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
 
-                <button
-                    type="button"
-                    id="searchSubmit"
-                    aria-label="Pesquisar"
-                >
+              <path d="m20 20-4-4"></path>
+            </svg>
+          </button>
 
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
+          <!-- RESULTADOS DA BUSCA -->
 
-                        <circle
-                            cx="11"
-                            cy="11"
-                            r="7"
-                        ></circle>
+          <div class="search-dropdown" id="searchDropdown"></div>
+        </div>
 
-                        <path
-                            d="m20 20-4-4"
-                        ></path>
-
-                    </svg>
-
-                </button>
-
-
-                <!-- RESULTADOS DA BUSCA -->
-
-                <div
-                    class="search-dropdown"
-                    id="searchDropdown"
-                ></div>
-
-            </div>
-
-
-
-            <!-- =================================================
+        <!-- =================================================
                  AÇÕES DO HEADER
                  ================================================= -->
 
-            <div class="header-actions">
+        <div class="header-actions">
+          <!-- CONTA -->
 
+          <button
+            class="header-action account-btn"
+            type="button"
+            aria-label="Minha conta"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"></circle>
 
-                <!-- CONTA -->
+              <path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"></path>
+            </svg>
 
-                <button
-                    class="header-action account-btn"
-                    type="button"
-                    aria-label="Minha conta"
-                >
+            <span> Conta </span>
+          </button>
 
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
+          <!-- FAVORITOS -->
 
-                        <circle
-                            cx="12"
-                            cy="8"
-                            r="4"
-                        ></circle>
+          <button
+            class="header-action icon-action"
+            id="favoritesBtn"
+            type="button"
+            aria-label="Favoritos"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20.8 8.7c0 5.5-8.8 10.3-8.8 10.3S3.2 14.2 3.2 8.7A4.7 4.7 0 0 1 12 6.1a4.7 4.7 0 0 1 8.8 2.6Z"
+              ></path>
+            </svg>
 
-                        <path
-                            d="M4 21c0-4 3.5-7 8-7s8 3 8 7"
-                        ></path>
+            <span class="header-count" id="favoriteCount"> 0 </span>
+          </button>
 
-                    </svg>
+          <!-- CARRINHO -->
 
-                    <span>
-                        Conta
-                    </span>
+          <button
+            class="header-action icon-action cart-btn"
+            id="cartBtn"
+            type="button"
+            aria-label="Abrir carrinho"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L20 7H6"
+              ></path>
 
-                </button>
+              <circle cx="10" cy="20" r="1"></circle>
 
+              <circle cx="18" cy="20" r="1"></circle>
+            </svg>
 
+            <span class="header-count" id="cartCount"> 0 </span>
+          </button>
 
-                <!-- FAVORITOS -->
+          <!-- BOTÃO MENU MOBILE -->
 
-                <button
-                    class="header-action icon-action"
-                    id="favoritesBtn"
-                    type="button"
-                    aria-label="Favoritos"
-                >
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-
-                        <path
-                            d="M20.8 8.7c0 5.5-8.8 10.3-8.8 10.3S3.2 14.2 3.2 8.7A4.7 4.7 0 0 1 12 6.1a4.7 4.7 0 0 1 8.8 2.6Z"
-                        ></path>
-
-                    </svg>
-
-                    <span
-                        class="header-count"
-                        id="favoriteCount"
-                    >
-                        0
-                    </span>
-
-                </button>
-
-
-
-                <!-- CARRINHO -->
-
-                <button
-                    class="header-action icon-action cart-btn"
-                    id="cartBtn"
-                    type="button"
-                    aria-label="Abrir carrinho"
-                >
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-
-                        <path
-                            d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L20 7H6"
-                        ></path>
-
-                        <circle
-                            cx="10"
-                            cy="20"
-                            r="1"
-                        ></circle>
-
-                        <circle
-                            cx="18"
-                            cy="20"
-                            r="1"
-                        ></circle>
-
-                    </svg>
-
-                    <span
-                        class="header-count"
-                        id="cartCount"
-                    >
-                        0
-                    </span>
-
-                </button>
-
-
-
-                <!-- BOTÃO MENU MOBILE -->
-
-                <button
-                    class="menu-btn"
-                    id="menuBtn"
-                    type="button"
-                    aria-label="Abrir menu"
-                    aria-expanded="false"
-                    aria-controls="mobileNav"
-                >
-
-                    <span></span>
-                    <span></span>
-                    <span></span>
-
-                </button>
-
-            </div>
-
+          <button
+            class="menu-btn"
+            id="menuBtn"
+            type="button"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
+      </div>
 
-
-
-        <!-- =================================================
+      <!-- =================================================
              MENU MOBILE
              ================================================= -->
 
-        <nav
-            class="mobile-nav"
-            id="mobileNav"
-            aria-label="Menu mobile"
-        >
+      <nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+        <div class="mobile-nav-inner">
+          <a href="#inicio"> Início </a>
 
-            <div class="mobile-nav-inner">
+          <a href="#produtos"> Produtos </a>
 
-                <a href="#inicio">
-                    Início
-                </a>
+          <a href="#personalizados"> Personalizados </a>
 
-                <a href="#produtos">
-                    Produtos
-                </a>
+          <a href="#categorias"> Categorias </a>
 
-                <a href="#personalizados">
-                    Personalizados
-                </a>
+          <a href="#ofertas"> Ofertas </a>
 
-                <a href="#categorias">
-                    Categorias
-                </a>
-
-                <a href="#ofertas">
-                    Ofertas
-                </a>
-
-                <a href="#contato">
-                    Contato
-                </a>
-
-            </div>
-
-        </nav>
-
+          <a href="#contato"> Contato </a>
+        </div>
+      </nav>
     </header>
-
-
 
     <!-- =====================================================
          BUSCA MOBILE
          ===================================================== -->
 
-    <div
-        class="search-screen"
-        id="searchScreen"
-        aria-hidden="true"
-    >
+    <div class="search-screen" id="searchScreen" aria-hidden="true">
+      <div class="search-screen-header">
+        <button type="button" id="closeSearch" aria-label="Fechar pesquisa">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12"></path>
+          </svg>
+        </button>
 
-        <div class="search-screen-header">
+        <strong> Buscar produtos </strong>
+      </div>
 
-            <button
-                type="button"
-                id="closeSearch"
-                aria-label="Fechar pesquisa"
-            >
+      <div class="mobile-search-box">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
 
-                <svg
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                >
+          <path d="m20 20-4-4"></path>
+        </svg>
 
-                    <path
-                        d="M18 6 6 18M6 6l12 12"
-                    ></path>
+        <input
+          type="search"
+          id="mobileSearchInput"
+          placeholder="Digite o que você procura..."
+          autocomplete="off"
+        />
+      </div>
 
-                </svg>
-
-            </button>
-
-            <strong>
-                Buscar produtos
-            </strong>
-
-        </div>
-
-
-        <div class="mobile-search-box">
-
-            <svg
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-            >
-
-                <circle
-                    cx="11"
-                    cy="11"
-                    r="7"
-                ></circle>
-
-                <path
-                    d="m20 20-4-4"
-                ></path>
-
-            </svg>
-
-            <input
-                type="search"
-                id="mobileSearchInput"
-                placeholder="Digite o que você procura..."
-                autocomplete="off"
-            >
-
-        </div>
-
-
-        <div
-            class="mobile-search-results"
-            id="mobileSearchResults"
-        ></div>
-
+      <div class="mobile-search-results" id="mobileSearchResults"></div>
     </div>
-
-
 
     <!-- =====================================================
          MAIN
          ===================================================== -->
 
     <main id="inicio">
-
-
-        <!-- =================================================
+      <!-- =================================================
              HERO
              ================================================= -->
 
-        <section class="hero">
+      <section class="hero">
+        <div class="hero-grid container">
+          <!-- TEXTO -->
 
-            <div class="hero-grid container">
+          <div class="hero-content reveal">
+            <span class="eyebrow">
+              <i></i>
 
+              IMPRESSÃO QUE MARCA
+            </span>
 
-                <!-- TEXTO -->
+            <h1>
+              TRANSFORMAMOS
 
-                <div class="hero-content reveal">
+              <span> SUAS IDEIAS </span>
 
-                    <span class="eyebrow">
+              EM IMPRESSÃO.
+            </h1>
 
-                        <i></i>
+            <p>
+              Impressão profissional, personalizados e soluções gráficas para
+              sua marca, seu evento ou seu negócio.
+            </p>
 
-                        IMPRESSÃO QUE MARCA
+            <div class="hero-buttons">
+              <a href="#produtos" class="btn btn-primary">
+                Começar agora
 
-                    </span>
+                <span> → </span>
+              </a>
 
+              <a href="#categorias" class="btn btn-outline"> Ver produtos </a>
+            </div>
 
-                    <h1>
+            <!-- MINI INFORMAÇÕES -->
 
-                        TRANSFORMAMOS
+            <div class="hero-meta">
+              <div>
+                <strong> 100% </strong>
 
-                        <span>
-                            SUAS IDEIAS
-                        </span>
+                <span> qualidade </span>
+              </div>
+            </div>
+          </div>
 
-                        EM IMPRESSÃO.
+          <!-- VISUAL DO HERO -->
 
-                    </h1>
+          <div class="hero-visual reveal">
+            <div class="hero-glow"></div>
 
+            <div class="hero-grid-lines"></div>
 
-                    <p>
+            <!-- CARD PRINCIPAL -->
 
-                        Impressão profissional, personalizados
-                        e soluções gráficas para sua marca,
-                        seu evento ou seu negócio.
+            <div class="hero-product hero-product-main">
+              <video
+                width="380px"
+                height="500px"
+                class="video-maquina"
+                autoplay
+                muted
+                loop
+              >
+                <source src="imagens/video-maquina.mp4" type="video/mp4" />
+              </video>
 
-                    </p>
-
-
-                    <div class="hero-buttons">
-
-                        <a
-                            href="#produtos"
-                            class="btn btn-primary"
-                        >
-
-                            Começar agora
-
-                            <span>
-                                →
-                            </span>
-
-                        </a>
-
-
-                        <a
-                            href="#categorias"
-                            class="btn btn-outline"
-                        >
-
-                            Ver produtos
-
-                        </a>
-
-                    </div>
-
-
-                    <!-- MINI INFORMAÇÕES -->
-
-                    <div class="hero-meta">
-
-                        <div>
-
-                            <strong>
-                                100%
-                            </strong>
-
-                            <span>
-                                qualidade
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- VISUAL DO HERO -->
-
-                <div class="hero-visual reveal">
-
-                    <div class="hero-glow"></div>
-
-                    <div class="hero-grid-lines"></div>
-
-
-                    <!-- CARD PRINCIPAL -->
-
-                    <div class="hero-product hero-product-main">
-
-                        <video width="380px" height="500px" class="video-maquina" autoplay muted loop>
-                        <source src="imagens/video-maquina.mp4" type="video/mp4">
-                        </video>
-
-                        <!-- <img
+              <!-- <img
                             src="imagens/camisa-missoes.png"
                             alt="Camiseta personalizada"
                         > -->
+            </div>
 
-                    </div>
+            <!-- CARD SECUNDÁRIO -->
 
+            <div class="hero-product hero-product-small">
+              <video
+                width="380px"
+                height="500px"
+                class="video-caneca"
+                autoplay
+                muted
+                loop
+              >
+                <source src="imagens/video-caneca.mp4" type="video/mp4" />
+              </video>
 
-                    <!-- CARD SECUNDÁRIO -->
-
-                    <div class="hero-product hero-product-small">
-
-                        <video width="380px" height="500px" class="video-caneca" autoplay muted loop>
-                        <source src="imagens/video-caneca.mp4" type="video/mp4">
-                        </video>
-
-                        <!-- <img
+              <!-- <img
                             src="imagens/caneca-logo.png"
                             alt="Cartão de visita personalizado"
                         > -->
-
-                    </div>
-
-
-                    <!-- ETIQUETA -->
-
-                    <div class="hero-floating-card">
-
-                        <span class="floating-icon">
-
-                            ✓
-
-                        </span>
-
-                        <div>
-
-                            <strong>
-                                Impressão Premium
-                            </strong>
-
-                            <small>
-                                Feita para destacar sua marca
-                            </small>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- ELEMENTO DECORATIVO -->
-
-                    <div class="hero-orbit orbit-one"></div>
-
-                    <div class="hero-orbit orbit-two"></div>
-
-                </div>
-
             </div>
 
-        </section>
+            <!-- ETIQUETA -->
 
+            <div class="hero-floating-card">
+              <span class="floating-icon"> ✓ </span>
 
+              <div>
+                <strong> Impressão Premium </strong>
 
-        <!-- =================================================
+                <small> Feita para destacar sua marca </small>
+              </div>
+            </div>
+
+            <!-- ELEMENTO DECORATIVO -->
+
+            <div class="hero-orbit orbit-one"></div>
+
+            <div class="hero-orbit orbit-two"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
              BENEFÍCIOS
              ================================================= -->
 
-        <section class="benefits">
+      <section class="benefits">
+        <div class="container benefits-grid">
+          <div class="benefit-item reveal">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"></path>
 
-            <div class="container benefits-grid">
+                <circle cx="7" cy="19" r="2"></circle>
 
-
-                <div
-                    class="benefit-item reveal"
-                >
-
-                    <div class="benefit-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-
-                            <path
-                                d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"
-                            ></path>
-
-                            <circle
-                                cx="7"
-                                cy="19"
-                                r="2"
-                            ></circle>
-
-                            <circle
-                                cx="18"
-                                cy="19"
-                                r="2"
-                            ></circle>
-
-                        </svg>
-
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Entrega rápida
-                        </strong>
-
-                        <span>
-                            Agilidade do pedido à entrega.
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-
-                <div
-                    class="benefit-item reveal"
-                >
-
-                    <div class="benefit-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-
-                            <path
-                                d="M12 3 5 6v5c0 4.7 3 8.1 7 10 4-1.9 7-5.3 7-10V6l-7-3Z"
-                            ></path>
-
-                            <path
-                                d="m9 12 2 2 4-4"
-                            ></path>
-
-                        </svg>
-
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Qualidade garantida
-                        </strong>
-
-                        <span>
-                            Materiais e impressão de alto nível.
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-
-                <div
-                    class="benefit-item reveal"
-                >
-
-                    <div class="benefit-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-
-                            <path
-                                d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"
-                            ></path>
-
-                            <path
-                                d="M8 12h8M12 8v8"
-                            ></path>
-
-                        </svg>
-
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Personalização
-                        </strong>
-
-                        <span>
-                            Sua ideia do seu jeito.
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-
-                <div
-                    class="benefit-item reveal"
-                >
-
-                    <div class="benefit-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-
-                            <rect
-                                x="5"
-                                y="10"
-                                width="14"
-                                height="10"
-                                rx="2"
-                            ></rect>
-
-                            <path
-                                d="M8 10V7a4 4 0 0 1 8 0v3"
-                            ></path>
-
-                        </svg>
-
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Compra segura
-                        </strong>
-
-                        <span>
-                            Seus dados sempre protegidos.
-                        </span>
-
-                    </div>
-
-                </div>
-
+                <circle cx="18" cy="19" r="2"></circle>
+              </svg>
             </div>
 
-        </section>
-
-
-
-        <!-- =================================================
-             CATEGORIAS
-             ================================================= -->
-
-        <section class="section" id="categorias">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span>
-                        Encontre o que precisa
-                    </span>
-
-                    <h2>
-                        Categorias
-                    </h2>
-
-                </div>
-
-
-                <div
-                    class="category-grid"
-                    id="categoryGrid">
-
-
-                    <!-- IMAGEM 01 -->
-                    <a href="#produtos"
-                        class="category-card reveal"
-                        data-category="Adesivos">
-
-                        <div
-                            class="category-card__bg"
-                            style="background-image:url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85');">
-                        </div>
-
-                        <div class="category-card__body">
-
-                            <small>
-                                Impressão personalizada
-                            </small>
-
-                            <strong>
-                                Adesivos
-                            </strong>
-
-                            <span>
-                                Ver produtos
-                                <b>→</b>
-                            </span>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- IMAGEM 02 -->
-                    <a href="#produtos"
-                        class="category-card reveal"
-                        data-category="Banners">
-
-                        <div
-                            class="category-card__bg"
-                            style="background-image:url('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85');">
-                        </div>
-
-                        <div class="category-card__body">
-
-                            <small>
-                                Comunicação visual
-                            </small>
-
-                            <strong>
-                                Banners
-                            </strong>
-
-                            <span>
-                                Ver produtos
-                                <b>→</b>
-                            </span>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- IMAGEM 03 -->
-                    <a href="#produtos"
-                        class="category-card reveal"
-                        data-category="Personalizados">
-
-                        <div
-                            class="category-card__bg"
-                            style="background-image:url('https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=900&q=85');">
-                        </div>
-
-                        <div class="category-card__body">
-
-                            <small>
-                                Produtos exclusivos
-                            </small>
-
-                            <strong>
-                                Personalizados
-                            </strong>
-
-                            <span>
-                                Ver produtos
-                                <b>→</b>
-                            </span>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- IMAGEM 04 -->
-                    <a href="#produtos"
-                        class="category-card reveal"
-                        data-category="Linha Têxtil">
-
-                        <div
-                            class="category-card__bg"
-                            style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85');">
-                        </div>
-
-                        <div class="category-card__body">
-
-                            <small>
-                                Camisetas e tecidos
-                            </small>
-
-                            <strong>
-                                Linha Têxtil
-                            </strong>
-
-                            <span>
-                                Ver produtos
-                                <b>→</b>
-                            </span>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- IMAGEM 05 -->
-                    <a href="#produtos"
-                        class="category-card reveal"
-                        data-category="Cartões">
-
-                        <div
-                            class="category-card__bg"
-                            style="background-image:url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85');">
-                        </div>
-
-                        <div class="category-card__body">
-
-                            <small>
-                                Sua marca em destaque
-                            </small>
-
-                            <strong>
-                                Cartões
-                            </strong>
-
-                            <span>
-                                Ver produtos
-                                <b>→</b>
-                            </span>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- IMAGEM 06 -->
-                    <a href="#produtos"
-                        class="category-card reveal"
-                        data-category="Lonas">
-
-                        <div
-                            class="category-card__bg"
-                            style="background-image:url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85');">
-                        </div>
-
-                        <div class="category-card__body">
-
-                            <small>
-                                Grande formato
-                            </small>
-
-                            <strong>
-                                Lonas
-                            </strong>
-
-                            <span>
-                                Ver produtos
-                                <b>→</b>
-                            </span>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- IMAGEM 07 -->
-                    <a href="#produtos"
-                        class="category-card reveal"
-                        data-category="Wind Banner">
-
-                        <div
-                            class="category-card__bg"
-                            style="background-image:url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=85');">
-                        </div>
-
-                        <div class="category-card__body">
-
-                            <small>
-                                Divulgação profissional
-                            </small>
-
-                            <strong>
-                                Wind Banner
-                            </strong>
-
-                            <span>
-                                Ver produtos
-                                <b>→</b>
-                            </span>
-
-                        </div>
-
-                    </a>
-
-
-                    <!-- IMAGEM 08 -->
-                    <a href="#produtos"
-                        class="category-card reveal"
-                        data-category="Outros">
-
-                        <div
-                            class="category-card__bg"
-                            style="background-image:url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85');">
-                        </div>
-
-                        <div class="category-card__body">
-
-                            <small>
-                                Soluções para sua marca
-                            </small>
-
-                            <strong>
-                                Outros
-                            </strong>
-
-                            <span>
-                                Ver produtos
-                                <b>→</b>
-                            </span>
-
-                        </div>
-
-                    </a>
-
-                </div>
-
+            <div>
+              <strong> Entrega rápida </strong>
+
+              <span> Agilidade do pedido à entrega. </span>
+            </div>
+          </div>
+
+          <div class="benefit-item reveal">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 3 5 6v5c0 4.7 3 8.1 7 10 4-1.9 7-5.3 7-10V6l-7-3Z"
+                ></path>
+
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
             </div>
 
-        </section>
-
-
-        <!-- =================================================
-             PRODUTOS — MAIS VENDIDOS
-             ================================================= -->
-
-        <section class="section" id="produtos">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span>
-                        Destaques
-                    </span>
-
-                    <h2>
-                        Mais vendidos
-                    </h2>
-
-                </div>
-
-
-                <div class="carousel-wrapper">
-
-                    <button
-                        class="carousel-btn"
-                        type="button"
-                        data-carousel="featured"
-                        data-dir="-1"
-                        aria-label="Anterior">
-
-                        ←
-
-                    </button>
-
-
-                    <div
-                        class="product-carousel"
-                        id="featuredCarousel">
-
-
-                        <!-- PRODUTO 01 -->
-
-                        <article
-                            class="product-card reveal"
-                            data-id="p01"
-                            data-name="Camiseta personalizada"
-                            data-category="Linha Têxtil"
-                            data-price="39.90"
-                            data-image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85">
-
-                            <div class="product-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85"
-                                    alt="Camiseta personalizada"
-                                    loading="lazy">
-
-                                <button
-                                    class="favorite"
-                                    type="button"
-                                    data-favorite="p01"
-                                    aria-label="Adicionar aos favoritos">
-
-                                    ♡
-
-                                </button>
-
-                            </div>
-
-
-                            <div class="product-info">
-
-                                <small>
-                                    Linha Têxtil
-                                </small>
-
-                                <h3>
-                                    Camiseta personalizada
-                                </h3>
-
-                                <p>
-                                    Camiseta premium personalizada
-                                </p>
-
-                                <div class="price">
-
-                                    <strong>
-                                        R$ 39,90
-                                    </strong>
-
-                                </div>
-
-                                <button
-                                    class="product-add"
-                                    type="button"
-                                    data-add-cart="p01">
-
-                                    Adicionar ao carrinho
-
-                                </button>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- PRODUTO 02 -->
-
-                        <article
-                            class="product-card reveal"
-                            data-id="p02"
-                            data-name="Caneca personalizada"
-                            data-category="Personalizados"
-                            data-price="29.90"
-                            data-image="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85">
-
-                            <div class="product-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=900&q=85"
-                                    alt="Caneca personalizada"
-                                    loading="lazy">
-
-                                <span class="sale">
-                                    Oferta
-                                </span>
-
-                                <button
-                                    class="favorite"
-                                    type="button"
-                                    data-favorite="p02">
-
-                                    ♡
-
-                                </button>
-
-                            </div>
-
-
-                            <div class="product-info">
-
-                                <small>
-                                    Personalizados
-                                </small>
-
-                                <h3>
-                                    Caneca personalizada
-                                </h3>
-
-                                <p>
-                                    Caneca personalizada para presentes
-                                </p>
-
-                                <div class="price">
-
-                                    <strong>
-                                        R$ 29,90
-                                    </strong>
-
-                                </div>
-
-                                <button
-                                    class="product-add"
-                                    type="button"
-                                    data-add-cart="p02">
-
-                                    Adicionar ao carrinho
-
-                                </button>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- PRODUTO 03 -->
-
-                        <article
-                            class="product-card reveal"
-                            data-id="p03"
-                            data-name="Banner personalizado"
-                            data-category="Banner"
-                            data-price="49.90"
-                            data-image="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=900&q=85">
-
-                            <div class="product-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=900&q=85"
-                                    alt="Banner personalizado"
-                                    loading="lazy">
-
-                                <button
-                                    class="favorite"
-                                    type="button"
-                                    data-favorite="p03">
-
-                                    ♡
-
-                                </button>
-
-                            </div>
-
-                            <div class="product-info">
-
-                                <small>
-                                    Banner
-                                </small>
-
-                                <h3>
-                                    Banner personalizado
-                                </h3>
-
-                                <p>
-                                    Banner para divulgação
-                                </p>
-
-                                <div class="price">
-
-                                    <strong>
-                                        R$ 49,90
-                                    </strong>
-
-                                </div>
-
-                                <button
-                                    class="product-add"
-                                    type="button"
-                                    data-add-cart="p03">
-
-                                    Adicionar ao carrinho
-
-                                </button>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- PRODUTO 04 -->
-
-                        <article
-                            class="product-card reveal"
-                            data-id="p04"
-                            data-name="Adesivo personalizado"
-                            data-category="Adesivos"
-                            data-price="19.90"
-                            data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85">
-
-                            <div class="product-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
-                                    alt="Adesivo personalizado"
-                                    loading="lazy">
-
-                                <span class="sale">
-                                    Oferta
-                                </span>
-
-                                <button
-                                    class="favorite"
-                                    type="button"
-                                    data-favorite="p04">
-
-                                    ♡
-
-                                </button>
-
-                            </div>
-
-                            <div class="product-info">
-
-                                <small>
-                                    Adesivos
-                                </small>
-
-                                <h3>
-                                    Adesivo personalizado
-                                </h3>
-
-                                <p>
-                                    Adesivo com sua arte
-                                </p>
-
-                                <div class="price">
-
-                                    <strong>
-                                        R$ 19,90
-                                    </strong>
-
-                                </div>
-
-                                <button
-                                    class="product-add"
-                                    type="button"
-                                    data-add-cart="p04">
-
-                                    Adicionar ao carrinho
-
-                                </button>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- PRODUTO 05 -->
-
-                        <article
-                            class="product-card reveal"
-                            data-id="p05"
-                            data-name="Cartão de visita"
-                            data-category="Cartões"
-                            data-price="35.00"
-                            data-image="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85">
-
-                            <div class="product-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85"
-                                    alt="Cartão de visita"
-                                    loading="lazy">
-
-                                <button
-                                    class="favorite"
-                                    type="button"
-                                    data-favorite="p05">
-
-                                    ♡
-
-                                </button>
-
-                            </div>
-
-                            <div class="product-info">
-
-                                <small>
-                                    Cartões
-                                </small>
-
-                                <h3>
-                                    Cartão de visita
-                                </h3>
-
-                                <p>
-                                    Cartão de visita profissional
-                                </p>
-
-                                <div class="price">
-
-                                    <strong>
-                                        R$ 35,00
-                                    </strong>
-
-                                </div>
-
-                                <button
-                                    class="product-add"
-                                    type="button"
-                                    data-add-cart="p05">
-
-                                    Adicionar ao carrinho
-
-                                </button>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- PRODUTO 06 -->
-
-                        <article
-                            class="product-card reveal"
-                            data-id="p06"
-                            data-name="Lona impressa"
-                            data-category="Lonas"
-                            data-price="59.90"
-                            data-image="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85">
-
-                            <div class="product-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85"
-                                    alt="Lona impressa"
-                                    loading="lazy">
-
-                                <button
-                                    class="favorite"
-                                    type="button"
-                                    data-favorite="p06">
-
-                                    ♡
-
-                                </button>
-
-                            </div>
-
-                            <div class="product-info">
-
-                                <small>
-                                    Lonas
-                                </small>
-
-                                <h3>
-                                    Lona impressa
-                                </h3>
-
-                                <p>
-                                    Lona para comunicação visual
-                                </p>
-
-                                <div class="price">
-
-                                    <strong>
-                                        R$ 59,90
-                                    </strong>
-
-                                </div>
-
-                                <button
-                                    class="product-add"
-                                    type="button"
-                                    data-add-cart="p06">
-
-                                    Adicionar ao carrinho
-
-                                </button>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- PRODUTO 07 -->
-
-                        <article
-                            class="product-card reveal"
-                            data-id="p07"
-                            data-name="Wind Banner"
-                            data-category="Wind Banner"
-                            data-price="119.90"
-                            data-image="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=85">
-
-                            <div class="product-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=900&q=85"
-                                    alt="Wind Banner"
-                                    loading="lazy">
-
-                                <span class="sale">
-                                    Oferta
-                                </span>
-
-                                <button
-                                    class="favorite"
-                                    type="button"
-                                    data-favorite="p07">
-
-                                    ♡
-
-                                </button>
-
-                            </div>
-
-                            <div class="product-info">
-
-                                <small>
-                                    Wind Banner
-                                </small>
-
-                                <h3>
-                                    Wind Banner
-                                </h3>
-
-                                <p>
-                                    Wind banner para eventos
-                                </p>
-
-                                <div class="price">
-
-                                    <strong>
-                                        R$ 119,90
-                                    </strong>
-
-                                </div>
-
-                                <button
-                                    class="product-add"
-                                    type="button"
-                                    data-add-cart="p07">
-
-                                    Adicionar ao carrinho
-
-                                </button>
-
-                            </div>
-
-                        </article>
-
-
-                        <!-- PRODUTO 08 -->
-
-                        <article
-                            class="product-card reveal"
-                            data-id="p08"
-                            data-name="Sacola personalizada"
-                            data-category="Personalizados"
-                            data-price="44.90"
-                            data-image="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85">
-
-                            <div class="product-image">
-
-                                <img
-                                    src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=85"
-                                    alt="Sacola personalizada"
-                                    loading="lazy">
-
-                                <button
-                                    class="favorite"
-                                    type="button"
-                                    data-favorite="p08">
-
-                                    ♡
-
-                                </button>
-
-                            </div>
-
-                            <div class="product-info">
-
-                                <small>
-                                    Personalizados
-                                </small>
-
-                                <h3>
-                                    Sacola personalizada
-                                </h3>
-
-                                <p>
-                                    Sacola personalizada para sua marca
-                                </p>
-
-                                <div class="price">
-
-                                    <strong>
-                                        R$ 44,90
-                                    </strong>
-
-                                </div>
-
-                                <button
-                                    class="product-add"
-                                    type="button"
-                                    data-add-cart="p08">
-
-                                    Adicionar ao carrinho
-
-                                </button>
-
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <button
-                        class="carousel-btn"
-                        type="button"
-                        data-carousel="featured"
-                        data-dir="1"
-                        aria-label="Próximo">
-
-                        →
-
-                    </button>
-
-                </div>
-
+            <div>
+              <strong> Qualidade garantida </strong>
+
+              <span> Materiais e impressão de alto nível. </span>
+            </div>
+          </div>
+
+          <div class="benefit-item reveal">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"></path>
+
+                <path d="M8 12h8M12 8v8"></path>
+              </svg>
             </div>
 
-        </section>
+            <div>
+              <strong> Personalização </strong>
 
+              <span> Sua ideia do seu jeito. </span>
+            </div>
+          </div>
 
+          <div class="benefit-item reveal">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="5" y="10" width="14" height="10" rx="2"></rect>
 
-        <!-- =================================================
+                <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+              </svg>
+            </div>
+
+            <div>
+              <strong> Compra segura </strong>
+
+              <span> Seus dados sempre protegidos. </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+     CATEGORIAS
+     ================================================= -->
+
+      <section class="section categories-section" id="categorias">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <span class="eyebrow"> EXPLORE </span>
+
+              <h2>Encontre o que você precisa.</h2>
+            </div>
+
+            <p>
+              Soluções criativas para deixar sua marca ainda mais profissional.
+            </p>
+          </div>
+
+          <div class="category-grid" id="categoryGrid">
+            <a class="category-card reveal" href="#produtos">
+              <div
+                class="category-card__bg"
+                style="
+                  background-image: url(&quot;assets/categorias/adesivos.jpg&quot;);
+                "
+              ></div>
+
+              <div class="category-card__body">
+                <small> categoria </small>
+
+                <strong> Adesivos </strong>
+
+                <span>
+                  Impressão e recorte
+                  <b>→</b>
+                </span>
+              </div>
+            </a>
+
+            <a class="category-card reveal" href="#produtos">
+              <div
+                class="category-card__bg"
+                style="
+                  background-image: url(&quot;assets/categorias/banners.png&quot;);
+                "
+              ></div>
+
+              <div class="category-card__body">
+                <small> categoria </small>
+
+                <strong> Banners </strong>
+
+                <span>
+                  Comunicação visual
+                  <b>→</b>
+                </span>
+              </div>
+            </a>
+
+            <a class="category-card reveal" href="#produtos">
+              <div
+                class="category-card__bg"
+                style="
+                  background-image: url(&quot;assets/categorias/personalizados.jpg&quot;);
+                "
+              ></div>
+
+              <div class="category-card__body">
+                <small> categoria </small>
+
+                <strong> Personalizados </strong>
+
+                <span>
+                  Produtos com sua marca
+                  <b>→</b>
+                </span>
+              </div>
+            </a>
+
+            <a class="category-card reveal" href="#produtos">
+              <div
+                class="category-card__bg"
+                style="
+                  background-image: url(&quot;assets/categorias/lonas.jpg&quot;);
+                "
+              ></div>
+
+              <div class="category-card__body">
+                <small> categoria </small>
+
+                <strong> Lonas </strong>
+
+                <span>
+                  Alta durabilidade
+                  <b>→</b>
+                </span>
+              </div>
+            </a>
+
+            <a class="category-card reveal" href="#produtos">
+              <div
+                class="category-card__bg"
+                style="
+                  background-image: url(&quot;assets/categorias/textil.jpg&quot;);
+                "
+              ></div>
+
+              <div class="category-card__body">
+                <small> categoria </small>
+
+                <strong> Linha Têxtil </strong>
+
+                <span>
+                  Vista sua marca
+                  <b>→</b>
+                </span>
+              </div>
+            </a>
+
+            <a class="category-card reveal" href="#produtos">
+              <div
+                class="category-card__bg"
+                style="
+                  background-image: url(&quot;assets/categorias/cartoes.jpg&quot;);
+                "
+              ></div>
+
+              <div class="category-card__body">
+                <small> categoria </small>
+
+                <strong> Cartões de Visita </strong>
+
+                <span>
+                  Sua marca na mão
+                  <b>→</b>
+                </span>
+              </div>
+            </a>
+
+            <a class="category-card reveal" href="#produtos">
+              <div
+                class="category-card__bg"
+                style="
+                  background-image: url(&quot;assets/categorias/wind-banner.jpg&quot;);
+                "
+              ></div>
+
+              <div class="category-card__body">
+                <small> categoria </small>
+
+                <strong> Wind Banner </strong>
+
+                <span>
+                  Destaque em eventos
+                  <b>→</b>
+                </span>
+              </div>
+            </a>
+
+            <a class="category-card reveal" href="#produtos">
+              <div
+                class="category-card__bg"
+                style="
+                  background-image: url(&quot;assets/categorias/bones.png&quot;);
+                "
+              ></div>
+
+              <div class="category-card__body">
+                <small> categoria </small>
+
+                <strong> Bonés </strong>
+
+                <span>
+                  Identidade que veste
+                  <b>→</b>
+                </span>
+              </div>
+            </a>
+
+            <a class="category-card reveal" href="#produtos">
+              <div
+                class="category-card__bg"
+                style="
+                  background-image: url(&quot;assets/categorias/paineis.jpg&quot;);
+                "
+              ></div>
+
+              <div class="category-card__body">
+                <small> categoria </small>
+
+                <strong> Painéis </strong>
+
+                <span>
+                  Ambientes e eventos
+                  <b>→</b>
+                </span>
+              </div>
+            </a>
+
+            <a class="category-card reveal" href="#produtos">
+              <div
+                class="category-card__bg"
+                style="
+                  background-image: url(&quot;assets/categorias/outros.jpg&quot;);
+                "
+              ></div>
+
+              <div class="category-card__body">
+                <small> categoria </small>
+
+                <strong> Outros </strong>
+
+                <span>
+                  Mais possibilidades
+                  <b>→</b>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
+     MAIS VENDIDOS
+     ================================================= -->
+
+      <section class="section products-section" id="produtos">
+        <div class="container">
+          <div class="section-heading section-heading-row reveal">
+            <div>
+              <span class="eyebrow"> FAVORITOS DOS CLIENTES </span>
+
+              <h2>Mais vendidos</h2>
+            </div>
+
+            <div class="carousel-controls">
+              <button
+                type="button"
+                data-carousel="featured"
+                data-dir="-1"
+                aria-label="Produtos anteriores"
+              >
+                ←
+              </button>
+
+              <button
+                type="button"
+                data-carousel="featured"
+                data-dir="1"
+                aria-label="Próximos produtos"
+              >
+                →
+              </button>
+            </div>
+          </div>
+
+          <div class="product-carousel" id="featuredCarousel">
+            <!-- PRODUTO 1 -->
+
+            <article class="product-card reveal">
+              <div class="product-card__image">
+                <img
+                  src="assets/produtos/camiseta-personalizada.png"
+                  alt="Camiseta Personalizada Premium"
+                />
+              </div>
+
+              <div class="product-card__content">
+                <small> Linha Têxtil </small>
+
+                <h3>Camiseta Personalizada Premium</h3>
+
+                <p>Algodão premium com impressão de alta definição.</p>
+
+                <strong> R$ 59,90 </strong>
+              </div>
+            </article>
+
+            <!-- PRODUTO 2 -->
+
+            <article class="product-card reveal">
+              <div class="product-card__image">
+                <img
+                  src="assets/produtos/adesivo-personalizado.jpg"
+                  alt="Adesivo Personalizado"
+                />
+              </div>
+
+              <div class="product-card__content">
+                <small> Adesivos </small>
+
+                <h3>Adesivo Personalizado</h3>
+
+                <p>Recorte preciso e acabamento resistente.</p>
+
+                <strong> R$ 18,00 </strong>
+              </div>
+            </article>
+
+            <!-- PRODUTO 3 -->
+
+            <article class="product-card reveal">
+              <div class="product-card__image">
+                <img
+                  src="assets/produtos/cartao-de-visita.jpg"
+                  alt="Cartão de Visita Premium"
+                />
+              </div>
+
+              <div class="product-card__content">
+                <small> Cartões de Visita </small>
+
+                <h3>Cartão de Visita Premium</h3>
+
+                <p>Impressão profissional para sua marca.</p>
+
+                <strong> R$ 35,00 </strong>
+              </div>
+            </article>
+
+            <!-- PRODUTO 4 -->
+
+            <article class="product-card reveal">
+              <div class="product-card__image">
+                <img
+                  src="assets/produtos/banner.jpg"
+                  alt="Banner para sua marca"
+                />
+              </div>
+
+              <div class="product-card__content">
+                <small> Banners </small>
+
+                <h3>Banner para sua marca</h3>
+
+                <p>Comunicação visual com grande impacto.</p>
+
+                <strong> R$ 49,90 </strong>
+              </div>
+            </article>
+
+            <!-- PRODUTO 5 -->
+
+            <article class="product-card reveal">
+              <div class="product-card__image">
+                <img
+                  src="assets/produtos/caneca-personalizada.jpg"
+                  alt="Caneca Personalizada"
+                />
+              </div>
+
+              <div class="product-card__content">
+                <small> Personalizados </small>
+
+                <h3>Caneca Personalizada</h3>
+
+                <p>Sua arte impressa com acabamento premium.</p>
+
+                <strong> R$ 32,00 </strong>
+              </div>
+            </article>
+
+            <!-- PRODUTO 6 -->
+
+            <article class="product-card reveal">
+              <div class="product-card__image">
+                <img
+                  src="assets/produtos/bone-personalizado.jpg"
+                  alt="Boné Personalizado"
+                />
+              </div>
+
+              <div class="product-card__content">
+                <small> Bonés </small>
+
+                <h3>Boné Personalizado</h3>
+
+                <p>Personalização para equipes e eventos.</p>
+
+                <strong> R$ 44,90 </strong>
+              </div>
+            </article>
+
+            <!-- PRODUTO 7 -->
+
+            <article class="product-card reveal">
+              <div class="product-card__image">
+                <img
+                  src="assets/produtos/lona-impressa.jpg"
+                  alt="Lona Impressa"
+                />
+              </div>
+
+              <div class="product-card__content">
+                <small> Lonas </small>
+
+                <h3>Lona Impressa</h3>
+
+                <p>Alta durabilidade para comunicação externa.</p>
+
+                <strong> R$ 79,90 </strong>
+              </div>
+            </article>
+
+            <!-- PRODUTO 8 -->
+
+            <article class="product-card reveal">
+              <div class="product-card__image">
+                <img src="assets/produtos/wind-banner.jpg" alt="Wind Banner" />
+              </div>
+
+              <div class="product-card__content">
+                <small> Wind Banner </small>
+
+                <h3>Wind Banner</h3>
+
+                <p>Presença visual para eventos e ações.</p>
+
+                <strong> R$ 119,90 </strong>
+              </div>
+            </article>
+
+            <!-- PRODUTO 9 -->
+
+            <article class="product-card reveal">
+              <div class="product-card__image">
+                <img
+                  src="assets/produtos/painel-personalizado.jpg"
+                  alt="Painel Personalizado"
+                />
+              </div>
+
+              <div class="product-card__content">
+                <small> Painéis </small>
+
+                <h3>Painel Personalizado</h3>
+
+                <p>Painéis para ambientes, eventos e vitrines.</p>
+
+                <strong> R$ 149,90 </strong>
+              </div>
+            </article>
+
+            <!-- PRODUTO 10 -->
+
+            <article class="product-card reveal">
+              <div class="product-card__image">
+                <img
+                  src="assets/produtos/ecobag-personalizada.jpg"
+                  alt="Ecobag Personalizada"
+                />
+              </div>
+
+              <div class="product-card__content">
+                <small> Personalizados </small>
+
+                <h3>Ecobag Personalizada</h3>
+
+                <p>Estilo, utilidade e identidade visual.</p>
+
+                <strong> R$ 39,90 </strong>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
              BANNER DE DESTAQUE
              ================================================= -->
 
-        <section
-            class="promo-section"
-            id="ofertas"
-        >
+      <section class="promo-section" id="ofertas">
+        <div class="container">
+          <div class="promo-card reveal">
+            <div class="promo-content">
+              <span class="eyebrow"> SUA MARCA EM DESTAQUE </span>
 
-            <div class="container">
+              <h2>
+                Dê vida à sua
+                <span> identidade. </span>
+              </h2>
 
-                <div class="promo-card reveal">
+              <p>
+                Crie materiais personalizados que fazem sua empresa ser
+                lembrada.
+              </p>
 
-                    <div class="promo-content">
-
-                        <span class="eyebrow">
-                            SUA MARCA EM DESTAQUE
-                        </span>
-
-                        <h2>
-                            Dê vida à sua
-                            <span>
-                                identidade.
-                            </span>
-                        </h2>
-
-                        <p>
-                            Crie materiais personalizados
-                            que fazem sua empresa ser lembrada.
-                        </p>
-
-                        <a
-                            href="#personalizados"
-                            class="btn btn-light"
-                        >
-                            Criar agora
-                            <span>→</span>
-                        </a>
-
-                    </div>
-
-
-                    <div class="promo-visual">
-
-                        <div class="promo-circle"></div>
-
-                        <img
-                            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90"
-                            alt="Produto personalizado God Print"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-                </div>
-
+              <a href="#personalizados" class="btn btn-light">
+                Criar agora
+                <span>→</span>
+              </a>
             </div>
 
-        </section>
+            <div class="promo-visual">
+              <div class="promo-circle"></div>
 
+              <img
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=90"
+                alt="Produto personalizado God Print"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-
-        <!-- =================================================
+      <!-- =================================================
              PERSONALIZADOS
              ================================================= -->
 
-        <section
-            class="section products-section"
-            id="personalizados"
-        >
+      <section class="section products-section" id="personalizados">
+        <div class="container">
+          <div class="section-heading section-heading-row reveal">
+            <div>
+              <span class="eyebrow"> CRIE DO SEU JEITO </span>
 
-            <div class="container">
-
-
-                <div class="section-heading section-heading-row reveal">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            CRIE DO SEU JEITO
-                        </span>
-
-                        <h2>
-                            Personalizados
-                        </h2>
-
-                    </div>
-
-
-                    <div class="section-link">
-
-                        <a href="#produtos">
-                            Ver todos →
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="product-carousel"
-                    id="customCarousel"
-                ></div>
-
+              <h2>Personalizados</h2>
             </div>
 
-        </section>
+            <div class="section-link">
+              <a href="#produtos"> Ver todos → </a>
+            </div>
+          </div>
 
+          <div class="product-carousel" id="customCarousel"></div>
+        </div>
+      </section>
 
-
-        <!-- =================================================
+      <!-- =================================================
              CARTÕES / GRÁFICA
              ================================================= -->
 
-        <section class="dark-section">
+      <section class="dark-section">
+        <div class="container">
+          <div class="section-heading section-heading-row reveal">
+            <div>
+              <span class="eyebrow"> COMUNICAÇÃO VISUAL </span>
 
-            <div class="container">
-
-
-                <div class="section-heading section-heading-row reveal">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            COMUNICAÇÃO VISUAL
-                        </span>
-
-                        <h2>
-                            Materiais que comunicam.
-                        </h2>
-
-                    </div>
-
-                    <div class="section-link light-link">
-
-                        <a href="#produtos">
-                            Ver todos →
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="product-carousel"
-                    id="cardsCarousel"
-                ></div>
-
+              <h2>Materiais que comunicam.</h2>
             </div>
 
-        </section>
+            <div class="section-link light-link">
+              <a href="#produtos"> Ver todos → </a>
+            </div>
+          </div>
 
+          <div class="product-carousel" id="cardsCarousel"></div>
+        </div>
+      </section>
 
-
-        <!-- =================================================
+      <!-- =================================================
              COMO FUNCIONA
              ================================================= -->
 
-        <section class="section process-section">
+      <section class="section process-section">
+        <div class="container">
+          <div class="section-heading centered reveal">
+            <span class="eyebrow"> SIMPLES E RÁPIDO </span>
 
-            <div class="container">
+            <h2>Sua ideia em poucos passos.</h2>
 
+            <p>
+              Do conceito ao produto final, a God Print simplifica todo o
+              processo.
+            </p>
+          </div>
 
-                <div class="section-heading centered reveal">
+          <div class="process-grid">
+            <div class="process-item reveal">
+              <span class="process-number"> 01 </span>
 
-                    <span class="eyebrow">
-                        SIMPLES E RÁPIDO
-                    </span>
+              <div class="process-icon">✦</div>
 
-                    <h2>
-                        Sua ideia em poucos passos.
-                    </h2>
+              <h3>Escolha</h3>
 
-                    <p>
-                        Do conceito ao produto final,
-                        a God Print simplifica todo o processo.
-                    </p>
-
-                </div>
-
-
-                <div class="process-grid">
-
-
-                    <div class="process-item reveal">
-
-                        <span class="process-number">
-                            01
-                        </span>
-
-                        <div class="process-icon">
-                            ✦
-                        </div>
-
-                        <h3>
-                            Escolha
-                        </h3>
-
-                        <p>
-                            Encontre o produto ideal
-                            para sua necessidade.
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="process-item reveal">
-
-                        <span class="process-number">
-                            02
-                        </span>
-
-                        <div class="process-icon">
-                            ◇
-                        </div>
-
-                        <h3>
-                            Personalize
-                        </h3>
-
-                        <p>
-                            Envie sua arte ou conte
-                            sua ideia para nossa equipe.
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="process-item reveal">
-
-                        <span class="process-number">
-                            03
-                        </span>
-
-                        <div class="process-icon">
-                            ✓
-                        </div>
-
-                        <h3>
-                            Produzimos
-                        </h3>
-
-                        <p>
-                            Cuidamos da impressão
-                            com qualidade profissional.
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="process-item reveal">
-
-                        <span class="process-number">
-                            04
-                        </span>
-
-                        <div class="process-icon">
-                            →
-                        </div>
-
-                        <h3>
-                            Receba
-                        </h3>
-
-                        <p>
-                            Seu pedido pronto para
-                            transformar sua ideia em realidade.
-                        </p>
-
-                    </div>
-
-                </div>
-
+              <p>Encontre o produto ideal para sua necessidade.</p>
             </div>
 
-        </section>
+            <div class="process-item reveal">
+              <span class="process-number"> 02 </span>
 
+              <div class="process-icon">◇</div>
 
+              <h3>Personalize</h3>
 
-        <!-- =================================================
+              <p>Envie sua arte ou conte sua ideia para nossa equipe.</p>
+            </div>
+
+            <div class="process-item reveal">
+              <span class="process-number"> 03 </span>
+
+              <div class="process-icon">✓</div>
+
+              <h3>Produzimos</h3>
+
+              <p>Cuidamos da impressão com qualidade profissional.</p>
+            </div>
+
+            <div class="process-item reveal">
+              <span class="process-number"> 04 </span>
+
+              <div class="process-icon">→</div>
+
+              <h3>Receba</h3>
+
+              <p>Seu pedido pronto para transformar sua ideia em realidade.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================
              CTA
              ================================================= -->
 
-        <section
-            class="cta-section"
-            id="contato"
-        >
+      <section class="cta-section" id="contato">
+        <div class="container">
+          <div class="cta-card reveal">
+            <div>
+              <span class="eyebrow"> PRECISA DE AJUDA? </span>
 
-            <div class="container">
+              <h2>Vamos transformar sua ideia em realidade.</h2>
 
-                <div class="cta-card reveal">
-
-                    <div>
-
-                        <span class="eyebrow">
-                            PRECISA DE AJUDA?
-                        </span>
-
-                        <h2>
-                            Vamos transformar
-                            sua ideia em realidade.
-                        </h2>
-
-                        <p>
-                            Fale com nossa equipe e descubra
-                            a melhor solução para o seu projeto.
-                        </p>
-
-                    </div>
-
-
-                    <a
-                        href="https://wa.me/5500000000000?text=Olá%20God%20Print!%20Gostaria%20de%20um%20orçamento."
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-primary"
-                    >
-
-                        Falar com a God Print
-
-                        <span>
-                            →
-                        </span>
-
-                    </a>
-
-                </div>
-
+              <p>
+                Fale com nossa equipe e descubra a melhor solução para o seu
+                projeto.
+              </p>
             </div>
 
-        </section>
+            <a
+              href="https://wa.me/5500000000000?text=Olá%20God%20Print!%20Gostaria%20de%20um%20orçamento."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              Falar com a God Print
 
+              <span> → </span>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
-
-
 
     <!-- =====================================================
          FOOTER
          ===================================================== -->
 
     <footer class="footer">
+      <div class="container">
+        <div class="footer-main">
+          <!-- MARCA -->
 
-        <div class="container">
+          <div class="footer-brand">
+            <a href="#inicio" class="footer-logo">
+              <img src="assets/logo.png" alt="God Print" />
+            </a>
 
+            <p>Imprimindo sua ideia.</p>
 
-            <div class="footer-main">
+            <span>
+              Criatividade, qualidade e impressão para transformar projetos em
+              realidade.
+            </span>
+          </div>
 
+          <!-- INSTITUCIONAL -->
 
-                <!-- MARCA -->
+          <div class="footer-column">
+            <h3>Institucional</h3>
 
-                <div class="footer-brand">
+            <a href="#"> Sobre nós </a>
 
-                    <a
-                        href="#inicio"
-                        class="footer-logo"
-                    >
+            <a href="#"> Contato </a>
 
-                        <img
-                            src="assets/logo.png"
-                            alt="God Print"
-                        >
+            <a href="#"> Ajuda </a>
 
-                    </a>
+            <a href="#"> Política de privacidade </a>
 
-                    <p>
-                        Imprimindo sua ideia.
-                    </p>
+            <a href="#"> Termos de uso </a>
+          </div>
 
-                    <span>
-                        Criatividade, qualidade e impressão
-                        para transformar projetos em realidade.
-                    </span>
+          <!-- CATEGORIAS -->
 
-                </div>
+          <div class="footer-column">
+            <h3>Categorias</h3>
 
+            <a href="#categorias"> Adesivos </a>
 
+            <a href="#categorias"> Banners </a>
 
-                <!-- INSTITUCIONAL -->
+            <a href="#categorias"> Personalizados </a>
 
-                <div class="footer-column">
+            <a href="#categorias"> Linha Têxtil </a>
 
-                    <h3>
-                        Institucional
-                    </h3>
+            <a href="#categorias"> Cartões </a>
 
-                    <a href="#">
-                        Sobre nós
-                    </a>
+            <a href="#categorias"> Lonas </a>
+          </div>
 
-                    <a href="#">
-                        Contato
-                    </a>
+          <!-- CONTATO -->
 
-                    <a href="#">
-                        Ajuda
-                    </a>
+          <div class="footer-column">
+            <h3>Fale conosco</h3>
 
-                    <a href="#">
-                        Política de privacidade
-                    </a>
+            <a
+              href="https://wa.me/5500000000000"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
 
-                    <a href="#">
-                        Termos de uso
-                    </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
 
-                </div>
+            <a href="mailto:contato@godprint.com.br">
+              contato@godprint.com.br
+            </a>
+          </div>
+        </div>
 
-
-
-                <!-- CATEGORIAS -->
-
-                <div class="footer-column">
-
-                    <h3>
-                        Categorias
-                    </h3>
-
-                    <a href="#categorias">
-                        Adesivos
-                    </a>
-
-                    <a href="#categorias">
-                        Banners
-                    </a>
-
-                    <a href="#categorias">
-                        Personalizados
-                    </a>
-
-                    <a href="#categorias">
-                        Linha Têxtil
-                    </a>
-
-                    <a href="#categorias">
-                        Cartões
-                    </a>
-
-                    <a href="#categorias">
-                        Lonas
-                    </a>
-
-                </div>
-
-
-
-                <!-- CONTATO -->
-
-                <div class="footer-column">
-
-                    <h3>
-                        Fale conosco
-                    </h3>
-
-                    <a
-                        href="https://wa.me/5500000000000"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        WhatsApp
-                    </a>
-
-                    <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Instagram
-                    </a>
-
-                    <a href="mailto:contato@godprint.com.br">
-                        contato@godprint.com.br
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
+        <!-- =================================================
                  FOOTER BOTTOM
                  ================================================= -->
 
-            <div class="footer-bottom">
+        <div class="footer-bottom">
+          <span> © 2026 God Print. Todos os direitos reservados. </span>
 
-                <span>
-                    © 2026 God Print. Todos os direitos reservados.
-                </span>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"></rect>
 
+                <circle cx="12" cy="12" r="4"></circle>
 
-                <div class="footer-social">
+                <circle cx="17.5" cy="6.5" r="1"></circle>
+              </svg>
+            </a>
 
-                    <a
-                        href="#"
-                        aria-label="Instagram"
-                    >
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1Z"
+                ></path>
+              </svg>
+            </a>
 
-                        <svg
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
+            <a href="#" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"
+                ></path>
 
-                            <rect
-                                x="3"
-                                y="3"
-                                width="18"
-                                height="18"
-                                rx="5"
-                            ></rect>
-
-                            <circle
-                                cx="12"
-                                cy="12"
-                                r="4"
-                            ></circle>
-
-                            <circle
-                                cx="17.5"
-                                cy="6.5"
-                                r="1"
-                            ></circle>
-
-                        </svg>
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        aria-label="Facebook"
-                    >
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-
-                            <path
-                                d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1Z"
-                            ></path>
-
-                        </svg>
-
-                    </a>
-
-
-                    <a
-                        href="#"
-                        aria-label="WhatsApp"
-                    >
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                        >
-
-                            <path
-                                d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"
-                            ></path>
-
-                            <path
-                                d="M9 9c.3 2 2 3.7 4 4"
-                            ></path>
-
-                        </svg>
-
-                    </a>
-
-                </div>
-
-            </div>
-
+                <path d="M9 9c.3 2 2 3.7 4 4"></path>
+              </svg>
+            </a>
+          </div>
         </div>
-
+      </div>
     </footer>
-
-
 
     <!-- =====================================================
          FAVORITOS — PAINEL LATERAL
          ===================================================== -->
 
     <aside
-        class="side-panel favorites-panel"
-        id="favoritesPanel"
-        aria-hidden="true"
-        aria-label="Produtos favoritos"
+      class="side-panel favorites-panel"
+      id="favoritesPanel"
+      aria-hidden="true"
+      aria-label="Produtos favoritos"
     >
+      <div class="side-panel-header">
+        <div>
+          <small> SUA LISTA </small>
 
-        <div class="side-panel-header">
-
-            <div>
-
-                <small>
-                    SUA LISTA
-                </small>
-
-                <h2>
-                    Favoritos
-                </h2>
-
-            </div>
-
-            <button
-                type="button"
-                id="closeFavorites"
-                aria-label="Fechar favoritos"
-            >
-                ×
-            </button>
-
+          <h2>Favoritos</h2>
         </div>
 
+        <button type="button" id="closeFavorites" aria-label="Fechar favoritos">
+          ×
+        </button>
+      </div>
 
-        <div
-            class="favorite-items"
-            id="favoriteItems"
-        ></div>
-
+      <div class="favorite-items" id="favoriteItems"></div>
     </aside>
-
-
 
     <!-- =====================================================
          CARRINHO — PAINEL LATERAL
          ===================================================== -->
 
     <aside
-        class="side-panel cart-drawer"
-        id="cartDrawer"
-        aria-hidden="true"
-        aria-label="Carrinho de compras"
+      class="side-panel cart-drawer"
+      id="cartDrawer"
+      aria-hidden="true"
+      aria-label="Carrinho de compras"
     >
+      <div class="side-panel-header">
+        <div>
+          <small> SEU PEDIDO </small>
 
-        <div class="side-panel-header">
-
-            <div>
-
-                <small>
-                    SEU PEDIDO
-                </small>
-
-                <h2>
-                    Carrinho
-                </h2>
-
-            </div>
-
-            <button
-                type="button"
-                id="closeCart"
-                aria-label="Fechar carrinho"
-            >
-                ×
-            </button>
-
+          <h2>Carrinho</h2>
         </div>
 
+        <button type="button" id="closeCart" aria-label="Fechar carrinho">
+          ×
+        </button>
+      </div>
 
+      <!-- PRODUTOS -->
 
-        <!-- PRODUTOS -->
+      <div class="cart-items" id="cartItems"></div>
 
-        <div
-            class="cart-items"
-            id="cartItems"
-        ></div>
+      <!-- CARRINHO VAZIO -->
 
+      <div class="cart-empty" id="cartEmpty">
+        <div class="empty-icon">🛒</div>
 
+        <strong> Seu carrinho está vazio. </strong>
 
-        <!-- CARRINHO VAZIO -->
+        <small> Adicione produtos para começar seu pedido. </small>
 
-        <div
-            class="cart-empty"
-            id="cartEmpty"
+        <a href="#produtos" class="btn btn-primary"> Explorar produtos </a>
+      </div>
+
+      <!-- RESUMO -->
+
+      <div class="cart-summary">
+        <div>
+          <span> Subtotal </span>
+
+          <strong id="cartSubtotal"> R$ 0,00 </strong>
+        </div>
+
+        <div>
+          <span> Frete </span>
+
+          <span> Calculado no pedido </span>
+        </div>
+
+        <div class="cart-total">
+          <span> Total </span>
+
+          <strong id="cartTotal"> R$ 0,00 </strong>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-primary checkout-btn"
+          id="checkoutBtn"
         >
+          Finalizar pedido
 
-            <div class="empty-icon">
-                🛒
-            </div>
-
-            <strong>
-                Seu carrinho está vazio.
-            </strong>
-
-            <small>
-                Adicione produtos para começar seu pedido.
-            </small>
-
-            <a
-                href="#produtos"
-                class="btn btn-primary"
-            >
-                Explorar produtos
-            </a>
-
-        </div>
-
-
-
-        <!-- RESUMO -->
-
-        <div class="cart-summary">
-
-            <div>
-
-                <span>
-                    Subtotal
-                </span>
-
-                <strong id="cartSubtotal">
-                    R$ 0,00
-                </strong>
-
-            </div>
-
-
-            <div>
-
-                <span>
-                    Frete
-                </span>
-
-                <span>
-                    Calculado no pedido
-                </span>
-
-            </div>
-
-
-            <div class="cart-total">
-
-                <span>
-                    Total
-                </span>
-
-                <strong id="cartTotal">
-                    R$ 0,00
-                </strong>
-
-            </div>
-
-
-            <button
-                type="button"
-                class="btn btn-primary checkout-btn"
-                id="checkoutBtn"
-            >
-
-                Finalizar pedido
-
-                <span>
-                    →
-                </span>
-
-            </button>
-
-        </div>
-
+          <span> → </span>
+        </button>
+      </div>
     </aside>
-
-
 
     <!-- =====================================================
          BACKDROP DOS PAINÉIS
          ===================================================== -->
 
-    <div
-        class="drawer-backdrop"
-        id="drawerBackdrop"
-    ></div>
-
-
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
     <!-- =====================================================
          WHATSAPP FLUTUANTE
          ===================================================== -->
 
     <a
-        href="https://wa.me/5591992800697?text=Olá%20God%20Print!%20Gostaria%20de%20falar%20com%20vocês."
-        class="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Falar com a God Print pelo WhatsApp"
+      href="https://wa.me/5591992800697?text=Olá%20God%20Print!%20Gostaria%20de%20falar%20com%20vocês."
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar com a God Print pelo WhatsApp"
     >
+      <span class="whatsapp-label"> Fale conosco </span>
 
-        <span class="whatsapp-label">
-            Fale conosco
-        </span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"
+        ></path>
 
-
-        <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-        >
-
-            <path
-                d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"
-            ></path>
-
-            <path
-                d="M9 9c.3 2 2 3.7 4 4"
-            ></path>
-
-        </svg>
-
+        <path d="M9 9c.3 2 2 3.7 4 4"></path>
+      </svg>
     </a>
-
-
 
     <!-- =====================================================
          VOLTAR AO TOPO
          ===================================================== -->
 
     <button
-        type="button"
-        class="back-top"
-        id="backTop"
-        aria-label="Voltar ao topo"
+      type="button"
+      class="back-top"
+      id="backTop"
+      aria-label="Voltar ao topo"
     >
-
-        ↑
-
+      ↑
     </button>
-
-
 
     <!-- =====================================================
          TOAST / NOTIFICAÇÕES
          ===================================================== -->
 
-    <div
-        class="toast"
-        id="toast"
-        role="status"
-        aria-live="polite"
-    ></div>
-
-
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <!-- =====================================================
          JAVASCRIPT
          ===================================================== -->
 
-    <script src="js/script-1.js"defer></script>
-
-
-</body>
-
+    <script src="js/teste.js" defer></script>
+  </body>
 </html>
